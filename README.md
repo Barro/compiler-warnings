@@ -1,7 +1,10 @@
-# Clang warning flags collection and parser
+# C/C++ compiler warning flags collection and parser
 
 This project includes tools and lists to figure out all warning flags
-that [clang compiler](http://clang.llvm.org/) has:
+that [clang compiler](http://clang.llvm.org/) and
+[GNU Compiler Collection](https://gcc.gnu.org/) have:
+
+## Clang
 
 * [clang 3.2 warnings](warnings-clang-3.2.txt)
 * [clang 3.3 warnings](warnings-clang-3.3.txt)
@@ -9,6 +12,24 @@ that [clang compiler](http://clang.llvm.org/) has:
 * [clang 3.5 warnings](warnings-clang-3.5.txt)
 * [clang 3.6 warnings](warnings-clang-3.6.txt)
 * [clang 3.7 warnings](warnings-clang-3.7.txt)
+
+## GCC
+
+* [GCC 3.4 warnings](warnings-gcc-3.4.txt) (first GCC with domain
+  specific language options file)
+* [GCC 4.0 warnings](warnings-gcc-4.0.txt)
+* [GCC 4.1 warnings](warnings-gcc-4.1.txt)
+* [GCC 4.2 warnings](warnings-gcc-4.2.txt)
+* [GCC 4.3 warnings](warnings-gcc-4.3.txt)
+* [GCC 4.4 warnings](warnings-gcc-4.4.txt)
+* [GCC 4.5 warnings](warnings-gcc-4.5.txt)
+* [GCC 4.6 warnings](warnings-gcc-4.6.txt)
+* [GCC 4.7 warnings](warnings-gcc-4.7.txt)
+* [GCC 4.8 warnings](warnings-gcc-4.8.txt)
+* [GCC 4.9 warnings](warnings-gcc-4.9.txt)
+* [GCC 5.1 warnings](warnings-gcc-5.1.txt) (first 5.x series GCC)
+* [GCC 5.2 warnings](warnings-gcc-5.2.txt)
+* [GCC 5.3 warnings](warnings-gcc-5.3.txt)
 
 # Requirements
 
