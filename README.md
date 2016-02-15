@@ -2,9 +2,15 @@
 
 This project includes tools and lists to figure out all warning flags
 that [clang compiler](http://clang.llvm.org/) and
-[GNU Compiler Collection](https://gcc.gnu.org/) have:
+[GNU Compiler Collection](https://gcc.gnu.org/) have. This also shows
+all aliases and warning flags that a certain flag enables (prefixed
+with "#" character) so that you can easily see which flag is enabled
+by what.
 
-## Clang
+The purpose of these collections is to make it more easy to use the
+static code analysis tools that compilers provide.
+
+## Clang warning flags
 
 * [clang 3.2 warnings](warnings-clang-3.2.txt)
 * [clang 3.3 warnings](warnings-clang-3.3.txt)
@@ -13,7 +19,7 @@ that [clang compiler](http://clang.llvm.org/) and
 * [clang 3.6 warnings](warnings-clang-3.6.txt)
 * [clang 3.7 warnings](warnings-clang-3.7.txt)
 
-## GCC
+## GCC warning flags
 
 * [GCC 3.4 warnings](warnings-gcc-3.4.txt) (first GCC with domain
   specific language options file)
