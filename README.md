@@ -21,6 +21,13 @@ static code analysis tools that compilers provide.
 
 ## GCC warning flags
 
+If you need a full list of
+[GCC warning options](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html),
+for a specific version of GCC that you have, you can run GCC with `gcc
+--help=warnings` to get that list. Otherwise some plain (currently
+incomplete in edge cases) GCC warning options lists are available
+below:
+
 * [GCC 3.4 warnings](warnings-gcc-3.4.txt) (first GCC with domain
   specific language options file)
 * [GCC 4.0 warnings](warnings-gcc-4.0.txt)
