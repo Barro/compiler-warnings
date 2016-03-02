@@ -46,8 +46,10 @@ below:
 
 # Requirements
 
-This uses [ANTLR](http://www.antlr.org/) as a parser generator to
-parse clang's diagnostic groups definitions.
+This uses [ANTLR](http://www.antlr.org/) as a parser generator with
+some supporting Python code to parse warning flags from actual
+compiler option data files. Other requirements are following (plus
+their dependencies):
 
 * [make](http://www.gnu.org/software/make/)
 * [ANTLR4](http://www.antlr.org/)
