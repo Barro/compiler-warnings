@@ -89,10 +89,12 @@ def is_root_class(diagnostics, switch_name):
 def main(argv):
     parser = argparse.ArgumentParser(
         description="Clang diagnostics group parser")
-    parser.add_argument("--top-level-only", action='store_true', help="""\
+    parser.add_argument("--top-level", action='store_true', help="""\
 Show only top level switches. These filter out all switches that are enabled
 by some other switch and that way remove duplicate instances from the output.
 """)
+    parser.add_argument("--unique", action='store_true', help="""\
+Show only unique switches.""")
     parser.add_argument("groups_file", metavar="groups-file", help="""\
 The path of clang diagnostic groups file.
 """)
@@ -109,9 +111,11 @@ The path of clang diagnostic groups file.
     walker.walk(diagnostics, tree)
 
     for name in sorted(diagnostics.switchNames.keys()):
-        if args.top_level_only and not is_root_class(diagnostics, name):
+        if args.top_level and not is_root_class(diagnostics, name):
             continue
         print("-W%s" % name)
+        if args.unique:
+            continue
         print_references(diagnostics, name, 1)
 
 
