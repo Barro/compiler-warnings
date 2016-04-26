@@ -82,7 +82,7 @@ ANTLR with `antlr4` command, just use following commands:
 
     ninja
     ./parse-clang-diagnostic-groups.py <path-to-clang-source>/include/clang/Basic/DiagnosticGroups.td
-    ./parse-gcc-warning-options.py <path-to-gcc-source>/gcc/gcc/c-family/c.opt
+    ./parse-gcc-warning-options.py <path-to-gcc-source>/gcc/{common.opt,c-family/c.opt}
 
 And you'll get the list of all individual warning flags and their
 dependencies that are in the requested compiler version.
