@@ -1,8 +1,13 @@
+--all-warnings = -Wall
+--extra-warnings = -Wextra
+-W = -Wextra
 -Wabi
 #    -Wpsabi
 -Wabi-tag
 -Wabi=
 -Waddress
+-Waggregate-return
+-Waggressive-loop-optimizations
 -Wall
 #    -Waddress
 #    -Warray-bounds
@@ -24,16 +29,15 @@
 #      -Wformat-y2k
 #      -Wformat-zero-length
 #      -Wnonnull
-#    -Winit-self
 #    -Wimplicit
 #      -Wimplicit-function-declaration
 #      -Wimplicit-int
+#    -Winit-self
 #    -Wlogical-not-parentheses
 #    -Wmain
+#    -Wmaybe-uninitialized
 #    -Wmemset-transposed-args
 #    -Wmissing-braces
-#    -Wsizeof-pointer-memaccess
-#    -Wswitch
 #    -Wnarrowing
 #    -Wnonnull
 #    -Wopenmp-simd
@@ -43,18 +47,26 @@
 #    -Wreturn-type
 #    -Wsequence-point
 #    -Wsign-compare
+#    -Wsizeof-pointer-memaccess
 #    -Wstrict-aliasing=
 #    -Wstrict-overflow=
+#    -Wswitch
 #    -Wtrigraphs
 #    -Wuninitialized
-#    -Wmaybe-uninitialized
+#      -Wmaybe-uninitialized
 #    -Wunknown-pragmas
 #    -Wunused
+#      -Wunused-but-set-variable
+#      -Wunused-function
+#      -Wunused-label
 #      -Wunused-local-typedefs
+#      -Wunused-value
+#      -Wunused-variable
 #    -Wvolatile-register-var
 -Warray-bounds
 -Warray-bounds=
 -Wassign-intercept
+-Wattributes
 -Wbad-function-cast
 -Wbool-compare
 -Wbuiltin-macro-redefined
@@ -67,6 +79,7 @@
 -Wc90-c99-compat
 #    -Wlong-long
 -Wc99-c11-compat
+-Wcast-align
 -Wcast-qual
 -Wchar-subscripts
 -Wchkp
@@ -78,6 +91,7 @@
 #    -Wfloat-conversion
 #    -Wsign-conversion
 -Wconversion-null
+-Wcoverage-mismatch
 -Wcpp
 -Wctor-dtor-privacy
 -Wdate-time
@@ -85,7 +99,9 @@
 -Wdelete-incomplete
 -Wdelete-non-virtual-dtor
 -Wdeprecated
+-Wdeprecated-declarations
 -Wdesignated-init
+-Wdisabled-optimization
 -Wdiscarded-array-qualifiers
 -Wdiscarded-qualifiers
 -Wdiv-by-zero
@@ -96,19 +112,22 @@
 -Wempty-body
 -Wendif-labels
 -Wenum-compare
--Werror
 -Werror-implicit-function-declaration = -Werror=implicit-function-declaration
 -Wextra
 #    -Wclobbered
 #    -Wempty-body
 #    -Wignored-qualifiers
 #    -Wmissing-field-initializers
-#    -Wsized-deallocation
 #    -Wmissing-parameter-type
 #    -Wold-style-declaration
 #    -Woverride-init
 #    -Wsign-compare
--Wfloat-conversion
+#    -Wsized-deallocation
+#    -Wtype-limits
+#    -Wuninitialized
+#      -Wmaybe-uninitialized
+#    -Wunused-but-set-parameter
+#    -Wunused-parameter
 -Wfloat-equal
 -Wformat = -Wformat=1
 -Wformat-contains-nul
@@ -126,21 +145,25 @@
 #    -Wformat-y2k
 #    -Wformat-zero-length
 #    -Wnonnull
+-Wfree-nonheap-object
 -Wignored-qualifiers
 -Wimplicit
 #    -Wimplicit-function-declaration
 #    -Wimplicit-int
 -Wimplicit-function-declaration
 -Wimplicit-int
--Wimport
 -Wincompatible-pointer-types
 -Winherited-variadic-ctor
 -Winit-self
+-Winline
 -Wint-conversion
 -Wint-to-pointer-cast
+-Winvalid-memory-model
 -Winvalid-offsetof
 -Winvalid-pch
 -Wjump-misses-init
+-Wlarger-than- = -Wlarger-than=
+-Wlarger-than=
 -Wliteral-suffix
 -Wlogical-not-parentheses
 -Wlogical-op
@@ -151,11 +174,9 @@
 -Wmissing-braces
 -Wmissing-declarations
 -Wmissing-field-initializers
--Wmissing-format-attribute = -Wsuggest-attribute=format
 -Wmissing-include-dirs
 -Wmissing-parameter-type
 -Wmissing-prototypes
--Wmudflap
 -Wmultichar
 -Wnarrowing
 -Wnested-externs
@@ -163,16 +184,19 @@
 -Wnon-template-friend
 -Wnon-virtual-dtor
 -Wnonnull
--Wnormalized = -Wnormalized=nfc
 -Wnormalized=
+-Wodr
 -Wold-style-cast
 -Wold-style-declaration
 -Wold-style-definition
 -Wopenmp-simd
+-Woverflow
 -Woverlength-strings
 -Woverloaded-virtual
 -Woverride-init
+-Wpacked
 -Wpacked-bitfield-compat
+-Wpadded
 -Wparentheses
 -Wpedantic
 #    -Wendif-labels
@@ -188,9 +212,9 @@
 -Wpragmas
 -Wproperty-assign-default
 -Wprotocol
--Wpsabi
 -Wredundant-decls
 -Wreorder
+-Wreturn-local-addr
 -Wreturn-type
 -Wselector
 -Wsequence-point
@@ -200,17 +224,25 @@
 -Wshift-count-negative
 -Wshift-count-overflow
 -Wsign-compare
--Wsign-conversion
 -Wsign-promo
 -Wsized-deallocation
 -Wsizeof-array-argument
 -Wsizeof-pointer-memaccess
+-Wstack-protector
+-Wstack-usage=
+-Wstrict-aliasing
 -Wstrict-aliasing=
 -Wstrict-null-sentinel
+-Wstrict-overflow
 -Wstrict-overflow=
 -Wstrict-prototypes
 -Wstrict-selector-match
+-Wsuggest-attribute=const
 -Wsuggest-attribute=format
+-Wsuggest-attribute=noreturn
+-Wsuggest-attribute=pure
+-Wsuggest-final-methods
+-Wsuggest-final-types
 -Wsuggest-override
 -Wswitch
 -Wswitch-bool
@@ -222,20 +254,37 @@
 -Wtraditional
 #    -Wvariadic-macros
 -Wtraditional-conversion
+-Wtrampolines
 -Wtrigraphs
+-Wtype-limits
 -Wundeclared-selector
 -Wundef
 -Wuninitialized
+#    -Wmaybe-uninitialized
 -Wunknown-pragmas
+-Wunsafe-loop-optimizations
 -Wunsuffixed-float-constants
 -Wunused
+#    -Wunused-but-set-variable
+#    -Wunused-function
+#    -Wunused-label
 #    -Wunused-local-typedefs
+#    -Wunused-value
+#    -Wunused-variable
+-Wunused-but-set-parameter
+-Wunused-but-set-variable
+-Wunused-function
+-Wunused-label
 -Wunused-local-typedefs
 -Wunused-macros
+-Wunused-parameter
 -Wunused-result
+-Wunused-value
+-Wunused-variable
 -Wuseless-cast
 -Wvarargs
 -Wvariadic-macros
+-Wvector-operation-performance
 -Wvirtual-move-assign
 -Wvla
 -Wvolatile-register-var
