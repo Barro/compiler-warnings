@@ -227,6 +227,7 @@ def parse_options_file(filename, parsing_options={}):
 
     references = {}
     aliases = {}
+    warnings = set()
 
     for option_name, option_arguments in blocks:
         # TODO older GCC versions don't have this Warning attribute in
@@ -235,8 +236,8 @@ def parse_options_file(filename, parsing_options={}):
         warning_option = WarningOptionListener()
         apply_listener(option_arguments, warning_option)
 
-        if not warning_option.is_warning:
-            continue
+        if warning_option.is_warning:
+            warnings.add(option_name)
 
         if option_name not in references:
             references[option_name] = []
@@ -261,13 +262,16 @@ def parse_options_file(filename, parsing_options={}):
         if alias_enablers.alias_name is not None:
             aliases[option_name] = alias_enablers.alias_name
 
-    return references, aliases
+    return references, aliases, warnings
 
 
-def print_warning_flags(references, aliases):
+def print_warning_flags(references, aliases, warnings):
     for option_name in sorted(references.keys()):
+        if option_name not in warnings:
+            continue
         if option_name in aliases:
-            print("-" + option_name, "=", "-" + aliases[option_name])
+            sorted_aliases = sorted(aliases[option_name])
+            print("-" + option_name, "=", "-" + ", -".join(sorted_aliases))
         else:
             print("-" + option_name)
         print_enabled_options(references, option_name)
@@ -281,18 +285,22 @@ Parses GCC option files for warning options.""")
 
     all_references = {}
     all_aliases = {}
+    all_warnings = set()
 
     for filename in args.option_file:
-        file_references, file_aliases = parse_options_file(filename)
+        (file_references,
+         file_aliases,
+         file_warnings) = parse_options_file(filename)
         for flag, reference in file_references.items():
-            references = all_references.get(flag, set([]))
+            references = all_references.get(flag, set())
             all_references[flag] = references.union(reference)
         for flag, alias in file_aliases.items():
-            if flag in all_aliases:
-                assert(all_aliases[flag] == alias)
-            all_aliases[flag] = alias
+            aliases = all_aliases.get(flag, set())
+            aliases.add(alias)
+            all_aliases[flag] = aliases
+        all_warnings = all_warnings.union(file_warnings)
 
-    print_warning_flags(all_references, all_aliases)
+    print_warning_flags(all_references, all_aliases, all_warnings)
 
 if __name__ == "__main__":
     main(sys.argv)
