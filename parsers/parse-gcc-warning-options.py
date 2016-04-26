@@ -216,7 +216,7 @@ class WarningOptionListener(GccOptionsListener.GccOptionsListener):
 
 
 def print_enabled_options(references, option_name, level=1):
-    for reference in references.get(option_name, []):
+    for reference in sorted(references.get(option_name, [])):
         print("# " + "  " * level, "-" + reference)
         if reference in references:
             print_enabled_options(references, reference, level + 1)
