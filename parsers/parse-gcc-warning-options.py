@@ -205,14 +205,33 @@ class WarningOptionListener(GccOptionsListener.GccOptionsListener):
     >>> apply_listener("C C++ Warning", listener)
     >>> listener.is_warning
     True
+
+    Search for warn_* variables:
+
+    >>> listener = WarningOptionListener()
+    >>> apply_listener("C ObjC C++ ObjC++ Var(warn_sign_conversion) Init(-1)", listener)
+    >>> listener.is_warning
+    True
     """
 
     def __init__(self):
+        self._last_name = None
         self.is_warning = False
 
     def enterVariableName(self, ctx):
         if ctx.getText() == "Warning":
             self.is_warning = True
+        elif ctx.getText() == "Var":
+            self._last_name = "Var"
+
+    def enterAtom(self, ctx):
+        if self._last_name != "Var":
+            return
+        if ctx.getText().startswith("warn_"):
+            self.is_warning = True
+
+    def exitTrailer(self, ctx):
+        self._last_name = None
 
 
 def print_enabled_options(references, option_name, level=1):
