@@ -1,6 +1,12 @@
+--all-warnings = -Wall
+--extra-warnings = -Wextra
+--pedantic = -Wpedantic, -pedantic
+-W = -Wextra
 -Wabi
 -Wabi-tag
 -Waddress
+-Waggregate-return
+-Waggressive-loop-optimizations
 -Wall
 #    -Waddress
 #    -Warray-bounds
@@ -17,14 +23,13 @@
 #      -Wformat-y2k
 #      -Wformat-zero-length
 #      -Wnonnull
-#    -Winit-self
 #    -Wimplicit
 #      -Wimplicit-function-declaration
 #      -Wimplicit-int
+#    -Winit-self
 #    -Wmain
+#    -Wmaybe-uninitialized
 #    -Wmissing-braces
-#    -Wsizeof-pointer-memaccess
-#    -Wswitch
 #    -Wnarrowing
 #    -Wnonnull
 #    -Wopenmp-simd
@@ -34,16 +39,24 @@
 #    -Wreturn-type
 #    -Wsequence-point
 #    -Wsign-compare
+#    -Wsizeof-pointer-memaccess
 #    -Wstrict-aliasing=
 #    -Wstrict-overflow=
+#    -Wswitch
 #    -Wuninitialized
-#    -Wmaybe-uninitialized
+#      -Wmaybe-uninitialized
 #    -Wunknown-pragmas
 #    -Wunused
+#      -Wunused-but-set-variable
+#      -Wunused-function
+#      -Wunused-label
 #      -Wunused-local-typedefs
+#      -Wunused-value
+#      -Wunused-variable
 #    -Wvolatile-register-var
 -Warray-bounds
 -Wassign-intercept
+-Wattributes
 -Wbad-function-cast
 -Wbuiltin-macro-redefined
 -Wc++-compat
@@ -51,6 +64,7 @@
 -Wc++0x-compat
 #    -Wnarrowing
 -Wc++11-compat = -Wc++0x-compat
+-Wcast-align
 -Wcast-qual
 -Wchar-subscripts
 -Wclobbered
@@ -61,12 +75,16 @@
 #    -Wfloat-conversion
 #    -Wsign-conversion
 -Wconversion-null
+-Wcoverage-mismatch
+-Wcpp
 -Wctor-dtor-privacy
 -Wdate-time
 -Wdeclaration-after-statement
 -Wdelete-incomplete
 -Wdelete-non-virtual-dtor
 -Wdeprecated
+-Wdeprecated-declarations
+-Wdisabled-optimization
 -Wdiv-by-zero
 -Wdouble-promotion
 -Weffc++
@@ -75,7 +93,6 @@
 -Wempty-body
 -Wendif-labels
 -Wenum-compare
--Werror
 -Werror-implicit-function-declaration = -Werror=implicit-function-declaration
 -Wextra
 #    -Wclobbered
@@ -86,6 +103,11 @@
 #    -Wold-style-declaration
 #    -Woverride-init
 #    -Wsign-compare
+#    -Wtype-limits
+#    -Wuninitialized
+#      -Wmaybe-uninitialized
+#    -Wunused-but-set-parameter
+#    -Wunused-parameter
 -Wfloat-conversion
 -Wfloat-equal
 -Wformat = -Wformat=1
@@ -103,19 +125,23 @@
 #    -Wformat-y2k
 #    -Wformat-zero-length
 #    -Wnonnull
+-Wfree-nonheap-object
 -Wignored-qualifiers
 -Wimplicit
 #    -Wimplicit-function-declaration
 #    -Wimplicit-int
 -Wimplicit-function-declaration
 -Wimplicit-int
--Wimport
 -Winherited-variadic-ctor
 -Winit-self
+-Winline
 -Wint-to-pointer-cast
+-Winvalid-memory-model
 -Winvalid-offsetof
 -Winvalid-pch
 -Wjump-misses-init
+-Wlarger-than- = -Wlarger-than=
+-Wlarger-than=
 -Wliteral-suffix
 -Wlogical-op
 -Wlong-long
@@ -126,9 +152,9 @@
 -Wmissing-field-initializers
 -Wmissing-format-attribute = -Wsuggest-attribute=format
 -Wmissing-include-dirs
+-Wmissing-noreturn = -Wsuggest-attribute=noreturn
 -Wmissing-parameter-type
 -Wmissing-prototypes
--Wmudflap
 -Wmultichar
 -Wnarrowing
 -Wnested-externs
@@ -141,10 +167,13 @@
 -Wold-style-declaration
 -Wold-style-definition
 -Wopenmp-simd
+-Woverflow
 -Woverlength-strings
 -Woverloaded-virtual
 -Woverride-init
+-Wpacked
 -Wpacked-bitfield-compat
+-Wpadded
 -Wparentheses
 -Wpedantic
 #    -Wmain
@@ -165,16 +194,24 @@
 -Wreturn-type
 -Wselector
 -Wsequence-point
+-Wshadow
 -Wsign-compare
 -Wsign-conversion
 -Wsign-promo
 -Wsizeof-pointer-memaccess
+-Wstack-protector
+-Wstack-usage=
+-Wstrict-aliasing
 -Wstrict-aliasing=
 -Wstrict-null-sentinel
+-Wstrict-overflow
 -Wstrict-overflow=
 -Wstrict-prototypes
 -Wstrict-selector-match
+-Wsuggest-attribute=const
 -Wsuggest-attribute=format
+-Wsuggest-attribute=noreturn
+-Wsuggest-attribute=pure
 -Wswitch
 -Wswitch-default
 -Wswitch-enum
@@ -183,22 +220,40 @@
 -Wsystem-headers
 -Wtraditional
 -Wtraditional-conversion
+-Wtrampolines
 -Wtrigraphs
+-Wtype-limits
 -Wundeclared-selector
 -Wundef
 -Wuninitialized
+#    -Wmaybe-uninitialized
 -Wunknown-pragmas
+-Wunsafe-loop-optimizations
 -Wunsuffixed-float-constants
 -Wunused
+#    -Wunused-but-set-variable
+#    -Wunused-function
+#    -Wunused-label
 #    -Wunused-local-typedefs
+#    -Wunused-value
+#    -Wunused-variable
+-Wunused-but-set-parameter
+-Wunused-but-set-variable
+-Wunused-function
+-Wunused-label
 -Wunused-local-typedefs
 -Wunused-macros
+-Wunused-parameter
 -Wunused-result
+-Wunused-value
+-Wunused-variable
 -Wuseless-cast
 -Wvarargs
 -Wvariadic-macros
+-Wvector-operation-performance
 -Wvirtual-move-assign
 -Wvla
 -Wvolatile-register-var
 -Wwrite-strings
 -Wzero-as-null-pointer-constant
+-pedantic = -Wpedantic

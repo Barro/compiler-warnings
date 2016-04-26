@@ -1,5 +1,6 @@
 --all-warnings = -Wall
 --extra-warnings = -Wextra
+--pedantic = -Wpedantic, -pedantic
 -W = -Wextra
 -Wabi
 #    -Wpsabi
@@ -128,6 +129,7 @@
 #      -Wmaybe-uninitialized
 #    -Wunused-but-set-parameter
 #    -Wunused-parameter
+-Wfloat-conversion
 -Wfloat-equal
 -Wformat = -Wformat=1
 -Wformat-contains-nul
@@ -174,7 +176,9 @@
 -Wmissing-braces
 -Wmissing-declarations
 -Wmissing-field-initializers
+-Wmissing-format-attribute = -Wsuggest-attribute=format
 -Wmissing-include-dirs
+-Wmissing-noreturn = -Wsuggest-attribute=noreturn
 -Wmissing-parameter-type
 -Wmissing-prototypes
 -Wmultichar
@@ -212,6 +216,7 @@
 -Wpragmas
 -Wproperty-assign-default
 -Wprotocol
+-Wpsabi
 -Wredundant-decls
 -Wreorder
 -Wreturn-local-addr
@@ -224,6 +229,7 @@
 -Wshift-count-negative
 -Wshift-count-overflow
 -Wsign-compare
+-Wsign-conversion
 -Wsign-promo
 -Wsized-deallocation
 -Wsizeof-array-argument
@@ -290,3 +296,4 @@
 -Wvolatile-register-var
 -Wwrite-strings
 -Wzero-as-null-pointer-constant
+-pedantic = -Wpedantic
