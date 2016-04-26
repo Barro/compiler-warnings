@@ -18,6 +18,7 @@ static code analysis tools that compilers provide.
 * [clang 3.5 warnings](warnings-clang-3.5.txt)
 * [clang 3.6 warnings](warnings-clang-3.6.txt)
 * [clang 3.7 warnings](warnings-clang-3.7.txt)
+* [clang 3.8 warnings](warnings-clang-3.8.txt)
 
 ## GCC warning flags
 
