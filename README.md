@@ -70,7 +70,7 @@ some supporting Python code to parse warning flags from actual
 compiler option data files. Other requirements are following (plus
 their dependencies):
 
-* [make](http://www.gnu.org/software/make/)
+* [Ninja](https://ninja-build.org/)
 * [ANTLR4](http://www.antlr.org/)
 * [Python 2.7](https://www.python.org/)
 * [antlr4-python2-runtime](https://pypi.python.org/pypi/antlr4-python2-runtime/)
@@ -80,10 +80,9 @@ their dependencies):
 After you have installed all the requirements and are able to run
 ANTLR with `antlr4` command, just use following commands:
 
-    make
+    ninja
     ./parse-clang-diagnostic-groups.py <path-to-clang-source>/include/clang/Basic/DiagnosticGroups.td
     ./parse-gcc-warning-options.py <path-to-gcc-source>/gcc/gcc/c-family/c.opt
 
 And you'll get the list of all individual warning flags and their
 dependencies that are in the requested compiler version.
-

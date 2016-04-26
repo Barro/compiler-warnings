@@ -34,14 +34,18 @@ compOp
 atomlist : atom (SPACE atom)* ;
 
 atom
-    : INTEGER_LITERAL
+    :
+    INTEGER_LITERAL
     | NAME_LITERAL
     | PERCENTAGE_LITERAL
+    | WARNING_TEXT_LITERAL
     ;
+
+WARNING_TEXT_LITERAL : '{' ('a'..'z' | 'A'..'Z' | '-' | '(' | ')' | '%' | ' ')+ '}' ;
 
 INTEGER_LITERAL : '-'? INTEGERCHAR+ ;
 
-NAME_LITERAL : ('a'..'z' | 'A'..'Z') ( 'a'..'z' | 'A'..'Z' | '0'..'9' | '=' | '-' | '+' | '_')* ;
+NAME_LITERAL : ('a'..'z' | 'A'..'Z' | '-') ( 'a'..'z' | 'A'..'Z' | '0'..'9' | '=' | '-' | '+' | '_' | '.')* ;
 
 PERCENTAGE_LITERAL : '%' ('a'..'z' | '<' | '>')+ ;
 

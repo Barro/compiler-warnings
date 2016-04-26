@@ -2,7 +2,8 @@
 
 from __future__ import print_function
 
-from antlr4 import *
+import argparse
+import antlr4
 import sys
 import GccOptionsLexer
 import GccOptionsListener
@@ -13,6 +14,8 @@ STATE_OPTION_NAME = 2
 STATE_OPTION_ATTRIBUTES = 3
 STATE_OPTION_DESCRIPTION = 4
 STATE_NEWLINE = 5
+
+BORING_OPTIONS = set(["Variable", "Enum", "EnumValue"])
 
 
 def parse_warning_blocks(fp):
@@ -46,8 +49,10 @@ def parse_warning_blocks(fp):
 
         if state == STATE_OPTION_NAME:
             state = STATE_OPTION_DESCRIPTION
-            if not option_name.startswith("W"):
+            if option_name in BORING_OPTIONS:
                 continue
+            # if not option_name.startswith("W"):
+            #     continue
             option_attributes = line
             blocks.append((option_name, option_attributes))
             continue
@@ -55,12 +60,12 @@ def parse_warning_blocks(fp):
 
 
 def apply_listener(string_value, listener):
-    string_input = InputStream.InputStream(string_value)
+    string_input = antlr4.InputStream(string_value)
     lexer = GccOptionsLexer.GccOptionsLexer(string_input)
-    stream = CommonTokenStream(lexer)
+    stream = antlr4.CommonTokenStream(lexer)
     parser = GccOptionsParser.GccOptionsParser(stream)
     tree = parser.optionAttributes()
-    walker = ParseTreeWalker()
+    walker = antlr4.ParseTreeWalker()
     walker.walk(listener, tree)
 
 
@@ -170,7 +175,7 @@ class EnabledByListener(GccOptionsListener.GccOptionsListener):
     """
     Listens to EnabledBy(warningflag) function calls
 
-    >>> listener = LanguagesEnabledListener()
+    >>> listener = EnabledByListener()
     >>> apply_listener("EnabledBy(Wextra)", listener)
     >>> listener.enabled_by
     u'Wextra'
@@ -192,6 +197,24 @@ class EnabledByListener(GccOptionsListener.GccOptionsListener):
         self._last_name = None
 
 
+class WarningOptionListener(GccOptionsListener.GccOptionsListener):
+    """
+    Searches for Warning attributes.
+
+    >>> listener = WarningOptionListener()
+    >>> apply_listener("C C++ Warning", listener)
+    >>> listener.is_warning
+    True
+    """
+
+    def __init__(self):
+        self.is_warning = False
+
+    def enterVariableName(self, ctx):
+        if ctx.getText() == "Warning":
+            self.is_warning = True
+
+
 def print_enabled_options(references, option_name, level=1):
     for reference in references.get(option_name, []):
         print("# " + "  " * level, "-" + reference)
@@ -199,13 +222,22 @@ def print_enabled_options(references, option_name, level=1):
             print_enabled_options(references, reference, level + 1)
 
 
-if __name__ == "__main__":
-    blocks = parse_warning_blocks(open(sys.argv[1]))
+def parse_options_file(filename, parsing_options={}):
+    blocks = parse_warning_blocks(open(filename))
 
     references = {}
     aliases = {}
 
     for option_name, option_arguments in blocks:
+        # TODO older GCC versions don't have this Warning attribute in
+        # their options. Make this conditional and use some heuristics to
+        # determine warning options.
+        warning_option = WarningOptionListener()
+        apply_listener(option_arguments, warning_option)
+
+        if not warning_option.is_warning:
+            continue
+
         if option_name not in references:
             references[option_name] = []
 
@@ -229,9 +261,38 @@ if __name__ == "__main__":
         if alias_enablers.alias_name is not None:
             aliases[option_name] = alias_enablers.alias_name
 
+    return references, aliases
+
+
+def print_warning_flags(references, aliases):
     for option_name in sorted(references.keys()):
         if option_name in aliases:
             print("-" + option_name, "=", "-" + aliases[option_name])
         else:
             print("-" + option_name)
         print_enabled_options(references, option_name)
+
+
+def main(argv):
+    parser = argparse.ArgumentParser(description="""\
+Parses GCC option files for warning options.""")
+    parser.add_argument("option_file", metavar="option-file", nargs="+")
+    args = parser.parse_args(argv[1:])
+
+    all_references = {}
+    all_aliases = {}
+
+    for filename in args.option_file:
+        file_references, file_aliases = parse_options_file(filename)
+        for flag, reference in file_references.items():
+            references = all_references.get(flag, set([]))
+            all_references[flag] = references.union(reference)
+        for flag, alias in file_aliases.items():
+            if flag in all_aliases:
+                assert(all_aliases[flag] == alias)
+            all_aliases[flag] = alias
+
+    print_warning_flags(all_references, all_aliases)
+
+if __name__ == "__main__":
+    main(sys.argv)
