@@ -12,13 +12,13 @@ static code analysis tools that compilers provide.
 
 ## Clang warning flags
 
-* [clang 3.2 warnings](warnings-clang-3.2.txt)
-* [clang 3.3 warnings](warnings-clang-3.3.txt)
-* [clang 3.4 warnings](warnings-clang-3.4.txt)
-* [clang 3.5 warnings](warnings-clang-3.5.txt)
-* [clang 3.6 warnings](warnings-clang-3.6.txt)
-* [clang 3.7 warnings](warnings-clang-3.7.txt)
-* [clang 3.8 warnings](warnings-clang-3.8.txt)
+* [clang 3.2 warnings](clang/warnings-clang-3.2.txt)
+* [clang 3.3 warnings](clang/warnings-clang-3.3.txt)
+* [clang 3.4 warnings](clang/warnings-clang-3.4.txt)
+* [clang 3.5 warnings](clang/warnings-clang-3.5.txt)
+* [clang 3.6 warnings](clang/warnings-clang-3.6.txt)
+* [clang 3.7 warnings](clang/warnings-clang-3.7.txt)
+* [clang 3.8 warnings](clang/warnings-clang-3.8.txt)
 
 ## GCC warning flags
 
@@ -29,19 +29,19 @@ for a specific version of GCC that you have, you can run GCC with `gcc
 incomplete in edge cases) GCC warning options lists are available
 below:
 
-* [GCC 3.4 warnings](warnings-gcc-3.4.txt) (first GCC with domain
+* [GCC 3.4 warnings](gcc/warnings-gcc-3.4.txt) (first GCC with domain
   specific language options file)
-* [GCC 4.0 warnings](warnings-gcc-4.0.txt)
-* [GCC 4.1 warnings](warnings-gcc-4.1.txt)
-* [GCC 4.2 warnings](warnings-gcc-4.2.txt)
-* [GCC 4.3 warnings](warnings-gcc-4.3.txt)
-* [GCC 4.4 warnings](warnings-gcc-4.4.txt)
-* [GCC 4.5 warnings](warnings-gcc-4.5.txt)
-* [GCC 4.6 warnings](warnings-gcc-4.6.txt)
-* [GCC 4.7 warnings](warnings-gcc-4.7.txt)
-* [GCC 4.8 warnings](warnings-gcc-4.8.txt)
-* [GCC 4.9 warnings](warnings-gcc-4.9.txt)
-* [GCC 5.x warnings](warnings-gcc-5.txt) (covers GCC 5.1, 5.2, 5.3)
+* [GCC 4.0 warnings](gcc/warnings-gcc-4.0.txt)
+* [GCC 4.1 warnings](gcc/warnings-gcc-4.1.txt)
+* [GCC 4.2 warnings](gcc/warnings-gcc-4.2.txt)
+* [GCC 4.3 warnings](gcc/warnings-gcc-4.3.txt)
+* [GCC 4.4 warnings](gcc/warnings-gcc-4.4.txt)
+* [GCC 4.5 warnings](gcc/warnings-gcc-4.5.txt)
+* [GCC 4.6 warnings](gcc/warnings-gcc-4.6.txt)
+* [GCC 4.7 warnings](gcc/warnings-gcc-4.7.txt)
+* [GCC 4.8 warnings](gcc/warnings-gcc-4.8.txt)
+* [GCC 4.9 warnings](gcc/warnings-gcc-4.9.txt)
+* [GCC 5.x warnings](gcc/warnings-gcc-5.txt) (covers GCC 5.1, 5.2, 5.3)
 
 # Requirements
 
