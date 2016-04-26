@@ -267,8 +267,15 @@ def parse_options_file(filename, parsing_options={}):
 
 def print_warning_flags(references, aliases, warnings):
     for option_name in sorted(references.keys()):
+        option_aliases = aliases.get(option_name, [])
         if option_name not in warnings:
-            continue
+            is_warning = False
+            for alias in option_aliases:
+                if alias in warnings:
+                    is_warning = True
+                    break
+            if not is_warning:
+                continue
         if option_name in aliases:
             sorted_aliases = sorted(aliases[option_name])
             print("-" + option_name, "=", "-" + ", -".join(sorted_aliases))
