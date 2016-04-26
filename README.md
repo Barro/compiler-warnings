@@ -40,9 +40,7 @@ below:
 * [GCC 4.7 warnings](warnings-gcc-4.7.txt)
 * [GCC 4.8 warnings](warnings-gcc-4.8.txt)
 * [GCC 4.9 warnings](warnings-gcc-4.9.txt)
-* [GCC 5.1 warnings](warnings-gcc-5.1.txt) (first 5.x series GCC)
-* [GCC 5.2 warnings](warnings-gcc-5.2.txt)
-* [GCC 5.3 warnings](warnings-gcc-5.3.txt)
+* [GCC 5.x warnings](warnings-gcc-5.txt) (covers GCC 5.1, 5.2, 5.3)
 
 # Requirements
 
