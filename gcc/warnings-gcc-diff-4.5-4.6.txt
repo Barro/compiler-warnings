@@ -1,0 +1,10 @@
++-Wcpp
++-Wdouble-promotion
++-Wnoexcept
++-Wproperty-assign-default
++-Wsuggest-attribute=const
++-Wsuggest-attribute=noreturn
++-Wsuggest-attribute=pure
++-Wtrampolines
++-Wunused-but-set-parameter
++-Wunused-but-set-variable

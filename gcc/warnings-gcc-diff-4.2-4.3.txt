@@ -1,0 +1,14 @@
++-Warray-bounds
++-Wc++0x-compat
++-Wclobbered
++-Wcoverage-mismatch
++-Wempty-body
++-Wformat-contains-nul
++-Wignored-qualifiers
++-Wlogical-op
++-Wmissing-parameter-type
++-Wold-style-declaration
++-Wsign-conversion
++-Wtraditional-conversion
++-Wtype-limits
++-Wvla

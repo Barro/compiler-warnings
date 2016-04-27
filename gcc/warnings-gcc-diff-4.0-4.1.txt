@@ -1,0 +1,11 @@
++-Wassign-intercept
++-Wattributes
++-Wc++-compat
++-Wint-to-pointer-cast
++-Wnormalized=
++-Wpointer-to-int-cast
++-Wpragmas
++-Wstack-protector
++-Wstrict-selector-match
++-Wunsafe-loop-optimizations
++-Wvolatile-register-var

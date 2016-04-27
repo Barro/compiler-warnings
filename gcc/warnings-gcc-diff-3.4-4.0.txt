@@ -1,0 +1,6 @@
++-Wmissing-field-initializers
++-Wmissing-include-dirs
++-Wpointer-sign
++-Wstrict-aliasing=
++-Wstrict-null-sentinel
++-Wvariadic-macros

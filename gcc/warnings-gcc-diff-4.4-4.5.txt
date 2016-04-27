@@ -1,0 +1,4 @@
++-Wconversion-null
++-Wjump-misses-init
++-Wunsuffixed-float-constants
++-Wunused-result

@@ -1,0 +1,6 @@
++-Waddress
++-Woverflow
++-Woverlength-strings
++-Woverride-init
++-Wstrict-overflow
++-Wstrict-overflow=

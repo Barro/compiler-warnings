@@ -1,0 +1,11 @@
++-Wabi-tag
++-Waggressive-loop-optimizations
++-Winherited-variadic-ctor
++-Wliteral-suffix
++-Wpedantic
++-Wreturn-local-addr
++-Wsizeof-pointer-memaccess
++-Wsuggest-attribute=format
++-Wuseless-cast
++-Wvarargs
++-Wvirtual-move-assign

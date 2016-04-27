@@ -44,10 +44,12 @@
 -Wformat-y2k
 -Wformat-zero-length
 -Wformat=
+-Wframe-larger-than=
 -Wignored-qualifiers
 -Wimplicit
 -Wimplicit-function-declaration
 -Wimplicit-int
+-Wimport
 -Winit-self
 -Winline
 -Wint-to-pointer-cast
@@ -129,6 +131,7 @@
 -Wundef
 -Wuninitialized
 -Wunknown-pragmas
+-Wunreachable-code
 -Wunsafe-loop-optimizations
 -Wunsuffixed-float-constants
 -Wunused

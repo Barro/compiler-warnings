@@ -1,0 +1,8 @@
++-Wbuiltin-macro-redefined
++-Wenum-compare
++-Wframe-larger-than=
++-Wlarger-than=
++-Wmudflap
++-Wpacked-bitfield-compat
++-Wpsabi
++-Wsync-nand

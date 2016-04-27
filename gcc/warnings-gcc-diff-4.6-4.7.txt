@@ -1,0 +1,9 @@
++-Wdelete-non-virtual-dtor
++-Wfree-nonheap-object
++-Winvalid-memory-model
++-Wmaybe-uninitialized
++-Wnarrowing
++-Wstack-usage=
++-Wunused-local-typedefs
++-Wvector-operation-performance
++-Wzero-as-null-pointer-constant

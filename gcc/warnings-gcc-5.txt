@@ -1,6 +1,7 @@
 --all-warnings = -Wall
 --extra-warnings = -Wextra
---pedantic = -Wpedantic, -pedantic
+--pedantic = -pedantic, -Wpedantic
+-pedantic = -Wpedantic
 -W = -Wextra
 -Wabi
 #    -Wpsabi
@@ -147,6 +148,7 @@
 #    -Wformat-y2k
 #    -Wformat-zero-length
 #    -Wnonnull
+-Wframe-larger-than=
 -Wfree-nonheap-object
 -Wignored-qualifiers
 -Wimplicit
@@ -154,6 +156,7 @@
 #    -Wimplicit-int
 -Wimplicit-function-declaration
 -Wimplicit-int
+-Wimport
 -Wincompatible-pointer-types
 -Winherited-variadic-ctor
 -Winit-self
@@ -181,6 +184,7 @@
 -Wmissing-noreturn = -Wsuggest-attribute=noreturn
 -Wmissing-parameter-type
 -Wmissing-prototypes
+-Wmudflap
 -Wmultichar
 -Wnarrowing
 -Wnested-externs
@@ -188,6 +192,7 @@
 -Wnon-template-friend
 -Wnon-virtual-dtor
 -Wnonnull
+-Wnormalized = -Wnormalized=nfc
 -Wnormalized=
 -Wodr
 -Wold-style-cast
@@ -268,6 +273,7 @@
 -Wuninitialized
 #    -Wmaybe-uninitialized
 -Wunknown-pragmas
+-Wunreachable-code
 -Wunsafe-loop-optimizations
 -Wunsuffixed-float-constants
 -Wunused
@@ -296,4 +302,3 @@
 -Wvolatile-register-var
 -Wwrite-strings
 -Wzero-as-null-pointer-constant
--pedantic = -Wpedantic

@@ -12,6 +12,9 @@ static code analysis tools that compilers provide.
 
 ## Clang warning flags
 
+Clang includes `-Weverything` flag that enables all warnings that is
+not shown in these lists.
+
 * clang 3.2 [all](clang/warnings-clang-3.2.txt)
   • [top level](clang/warnings-clang-top-level-3.2.txt)
   • [unique](clang/warnings-clang-unique-3.2.txt)
@@ -45,23 +48,58 @@ static code analysis tools that compilers provide.
 If you need a full list of
 [GCC warning options](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html),
 for a specific version of GCC that you have, you can run GCC with `gcc
---help=warnings` to get that list. Otherwise some plain (currently
-incomplete in edge cases) GCC warning options lists are available
-below:
+--help=warnings` to get that list. Otherwise some plain GCC warning
+options lists are available below:
 
-* [GCC 3.4 warnings](gcc/warnings-gcc-3.4.txt) (first GCC with domain
-  specific language options file)
-* [GCC 4.0 warnings](gcc/warnings-gcc-4.0.txt)
-* [GCC 4.1 warnings](gcc/warnings-gcc-4.1.txt)
-* [GCC 4.2 warnings](gcc/warnings-gcc-4.2.txt)
-* [GCC 4.3 warnings](gcc/warnings-gcc-4.3.txt)
-* [GCC 4.4 warnings](gcc/warnings-gcc-4.4.txt)
-* [GCC 4.5 warnings](gcc/warnings-gcc-4.5.txt)
-* [GCC 4.6 warnings](gcc/warnings-gcc-4.6.txt)
-* [GCC 4.7 warnings](gcc/warnings-gcc-4.7.txt)
-* [GCC 4.8 warnings](gcc/warnings-gcc-4.8.txt)
-* [GCC 4.9 warnings](gcc/warnings-gcc-4.9.txt)
-* [GCC 5 warnings](gcc/warnings-gcc-5.txt) (covers GCC 5.1, 5.2, 5.3)
+* GCC 3.4 [all](gcc/warnings-gcc-3.4.txt)
+  • [top level](gcc/warnings-gcc-top-level-3.4.txt)
+  • [unique](gcc/warnings-gcc-unique-3.4.txt)
+  (first GCC with domain specific language options file)
+* GCC 4.0 [all](gcc/warnings-gcc-4.0.txt)
+  • [top level](gcc/warnings-gcc-top-level-4.0.txt)
+  • [unique](gcc/warnings-gcc-unique-4.0.txt)
+  • [diff](gcc/warnings-gcc-diff-3.4-4.0.txt)
+* GCC 4.1 [all](gcc/warnings-gcc-4.1.txt)
+  • [top level](gcc/warnings-gcc-top-level-4.1.txt)
+  • [unique](gcc/warnings-gcc-unique-4.1.txt)
+  • [diff](gcc/warnings-gcc-diff-4.0-4.1.txt)
+* GCC 4.2 [all](gcc/warnings-gcc-4.2.txt)
+  • [top level](gcc/warnings-gcc-top-level-4.2.txt)
+  • [unique](gcc/warnings-gcc-unique-4.2.txt)
+  • [diff](gcc/warnings-gcc-diff-4.1-4.2.txt)
+* GCC 4.3 [all](gcc/warnings-gcc-4.3.txt)
+  • [top level](gcc/warnings-gcc-top-level-4.3.txt)
+  • [unique](gcc/warnings-gcc-unique-4.3.txt)
+  • [diff](gcc/warnings-gcc-diff-4.2-4.3.txt)
+* GCC 4.4 [all](gcc/warnings-gcc-4.4.txt)
+  • [top level](gcc/warnings-gcc-top-level-4.4.txt)
+  • [unique](gcc/warnings-gcc-unique-4.4.txt)
+  • [diff](gcc/warnings-gcc-diff-4.3-4.4.txt)
+* GCC 4.5 [all](gcc/warnings-gcc-4.5.txt)
+  • [top level](gcc/warnings-gcc-top-level-4.5.txt)
+  • [unique](gcc/warnings-gcc-unique-4.5.txt)
+  • [diff](gcc/warnings-gcc-diff-4.4-4.5.txt)
+* GCC 4.6 [all](gcc/warnings-gcc-4.6.txt)
+  • [top level](gcc/warnings-gcc-top-level-4.6.txt)
+  • [unique](gcc/warnings-gcc-unique-4.6.txt)
+  • [diff](gcc/warnings-gcc-diff-4.5-4.6.txt)
+* GCC 4.7 [all](gcc/warnings-gcc-4.7.txt)
+  • [top level](gcc/warnings-gcc-top-level-4.7.txt)
+  • [unique](gcc/warnings-gcc-unique-4.7.txt)
+  • [diff](gcc/warnings-gcc-diff-4.6-4.7.txt)
+* GCC 4.8 [all](gcc/warnings-gcc-4.8.txt)
+  • [top level](gcc/warnings-gcc-top-level-4.8.txt)
+  • [unique](gcc/warnings-gcc-unique-4.8.txt)
+  • [diff](gcc/warnings-gcc-diff-4.7-4.8.txt)
+* GCC 4.9 [all](gcc/warnings-gcc-4.9.txt)
+  • [top level](gcc/warnings-gcc-top-level-4.9.txt)
+  • [unique](gcc/warnings-gcc-unique-4.9.txt)
+  • [diff](gcc/warnings-gcc-diff-4.8-4.9.txt)
+* GCC 5 [all](gcc/warnings-gcc-5.txt)
+  • [top level](gcc/warnings-gcc-top-level-5.txt)
+  • [unique](gcc/warnings-gcc-unique-5.txt)
+  • [diff](gcc/warnings-gcc-diff-4.9-5.txt)
+  (covers GCC 5.1, 5.2, 5.3)
 
 # Requirements
 

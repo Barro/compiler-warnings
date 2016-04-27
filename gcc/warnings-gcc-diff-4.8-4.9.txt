@@ -1,0 +1,5 @@
++-Wconditionally-supported
++-Wdate-time
++-Wdelete-incomplete
++-Wfloat-conversion
++-Wopenmp-simd
