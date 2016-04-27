@@ -4,7 +4,9 @@ from __future__ import print_function
 
 import argparse
 import antlr4
+import common
 import sys
+
 import GccOptionsLexer
 import GccOptionsListener
 import GccOptionsParser
@@ -16,6 +18,12 @@ STATE_OPTION_DESCRIPTION = 4
 STATE_NEWLINE = 5
 
 BORING_OPTIONS = set(["Variable", "Enum", "EnumValue"])
+
+NON_WARNING_WS = set([
+    "Werror",
+    "Werror=",
+    "Wfatal-errors",
+])
 
 
 def parse_warning_blocks(fp):
@@ -209,7 +217,7 @@ class WarningOptionListener(GccOptionsListener.GccOptionsListener):
     Search for warn_* variables:
 
     >>> listener = WarningOptionListener()
-    >>> apply_listener("C ObjC C++ ObjC++ Var(warn_sign_conversion) Init(-1)", listener)
+    >>> apply_listener("C C++ Var(warn_sign_conversion) Init(-1)", listener)
     >>> listener.is_warning
     True
     """
@@ -241,7 +249,16 @@ def print_enabled_options(references, option_name, level=1):
             print_enabled_options(references, reference, level + 1)
 
 
-def parse_options_file(filename, parsing_options={}):
+def could_be_warning(option_name, option_arguments):
+    if "," in option_name:
+        return False
+    if option_name in NON_WARNING_WS:
+        return False
+
+    return option_name.startswith("W")
+
+
+def parse_options_file(filename):
     blocks = parse_warning_blocks(open(filename))
 
     references = {}
@@ -249,13 +266,12 @@ def parse_options_file(filename, parsing_options={}):
     warnings = set()
 
     for option_name, option_arguments in blocks:
-        # TODO older GCC versions don't have this Warning attribute in
-        # their options. Make this conditional and use some heuristics to
-        # determine warning options.
         warning_option = WarningOptionListener()
         apply_listener(option_arguments, warning_option)
 
         if warning_option.is_warning:
+            warnings.add(option_name)
+        elif could_be_warning(option_name, option_arguments):
             warnings.add(option_name)
 
         if option_name not in references:
@@ -284,7 +300,7 @@ def parse_options_file(filename, parsing_options={}):
     return references, aliases, warnings
 
 
-def print_warning_flags(references, aliases, warnings):
+def print_warning_flags(args, references, parents, aliases, warnings):
     for option_name in sorted(references.keys()):
         option_aliases = aliases.get(option_name, [])
         if option_name not in warnings:
@@ -295,6 +311,17 @@ def print_warning_flags(references, aliases, warnings):
                     break
             if not is_warning:
                 continue
+        if args.unique:
+            if option_name not in aliases:
+                print("-" + option_name)
+            continue
+
+        if args.top_level:
+            if option_name in aliases:
+                continue
+            if len(parents.get(option_name, set())) > 0:
+                continue
+
         if option_name in aliases:
             sorted_aliases = sorted(aliases[option_name])
             print("-" + option_name, "=", "-" + ", -".join(sorted_aliases))
@@ -306,6 +333,7 @@ def print_warning_flags(references, aliases, warnings):
 def main(argv):
     parser = argparse.ArgumentParser(description="""\
 Parses GCC option files for warning options.""")
+    common.add_common_parser_options(parser)
     parser.add_argument("option_file", metavar="option-file", nargs="+")
     args = parser.parse_args(argv[1:])
 
@@ -326,7 +354,19 @@ Parses GCC option files for warning options.""")
             all_aliases[flag] = aliases
         all_warnings = all_warnings.union(file_warnings)
 
-    print_warning_flags(all_references, all_aliases, all_warnings)
+    all_parents = {}
+    for flag, references in all_references.items():
+        for reference in references:
+            parents = all_parents.get(reference, set())
+            parents.add(flag)
+            all_parents[reference] = parents
+
+    print_warning_flags(
+        args,
+        all_references,
+        all_parents,
+        all_aliases,
+        all_warnings)
 
 if __name__ == "__main__":
     main(sys.argv)

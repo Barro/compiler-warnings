@@ -1,10 +1,17 @@
 rule antlr
      command = antlr4 $in
 
+rule doctest
+     command = python -mdoctest $in
+
 build GccOptionsLexer.py GccOptionsLexer.tokens GccOptionsListener.py GccOptionsParser.py GccOptions.tokens: antlr GccOptions.g4
 
 build TableGenLexer.py TableGenLexer.tokens TableGenListener.py TableGenParser.py TableGen.tokens: antlr TableGen.g4
 
 build all: phony GccOptionsLexer.py GccOptionsLexer.tokens GccOptionsListener.py GccOptionsParser.py GccOptions.tokens TableGenLexer.py TableGenLexer.tokens TableGenListener.py TableGenParser.py TableGen.tokens
+
+build test-gcc: doctest parse-gcc-warning-options.py | GccOptionsLexer.py GccOptionsLexer.tokens GccOptionsListener.py GccOptionsParser.py GccOptions.tokens
+
+build test: phony test-gcc
 
 default all

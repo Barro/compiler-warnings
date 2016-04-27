@@ -4,7 +4,9 @@ from __future__ import print_function
 
 import antlr4
 import argparse
+import common
 import sys
+
 import TableGenLexer
 import TableGenListener
 import TableGenParser
@@ -89,12 +91,7 @@ def is_root_class(diagnostics, switch_name):
 def main(argv):
     parser = argparse.ArgumentParser(
         description="Clang diagnostics group parser")
-    parser.add_argument("--top-level", action='store_true', help="""\
-Show only top level switches. These filter out all switches that are enabled
-by some other switch and that way remove duplicate instances from the output.
-""")
-    parser.add_argument("--unique", action='store_true', help="""\
-Show only unique switches.""")
+    common.add_common_parser_options(parser)
     parser.add_argument("groups_file", metavar="groups-file", help="""\
 The path of clang diagnostic groups file.
 """)
