@@ -75,7 +75,8 @@ def print_references(diagnostics, switch_name, level):
     for reference_class_name in references:
         reference_switch_name = diagnostics.switchClasses[reference_class_name]
         reference_switches.append(reference_switch_name)
-    for reference_switch_name in sorted(reference_switches):
+    for reference_switch_name in sorted(
+            reference_switches, key=lambda x: x.lower()):
         print("# %s-W%s" % ("  " * level, reference_switch_name))
         print_references(diagnostics, reference_switch_name, level + 1)
 
@@ -107,7 +108,8 @@ The path of clang diagnostic groups file.
     walker = antlr4.ParseTreeWalker()
     walker.walk(diagnostics, tree)
 
-    for name in sorted(diagnostics.switchNames.keys()):
+    for name in sorted(
+            diagnostics.switchNames.keys(), key=lambda x: x.lower()):
         if args.top_level and not is_root_class(diagnostics, name):
             continue
         print("-W%s" % name)

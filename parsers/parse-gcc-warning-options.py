@@ -25,6 +25,20 @@ NON_WARNING_WS = set([
     "Wfatal-errors",
 ])
 
+# Pedantic is always in but in the options file it is only in 4.8 and later
+# GCC versions.
+WARNINGS_NON_W = set([
+    "pedantic",
+])
+
+# These go into common.opt in GCC 4.6 but before that they are aliases:
+HIDDEN_WARNINGS = set([
+    ("-all-warnings", "Wall"),
+    ("-extra-warnings", "Wextra"),
+    ("-pedantic", "pedantic"),
+    ("W", "Wextra"),
+])
+
 
 def parse_warning_blocks(fp):
     blocks = []
@@ -243,7 +257,8 @@ class WarningOptionListener(GccOptionsListener.GccOptionsListener):
 
 
 def print_enabled_options(references, option_name, level=1):
-    for reference in sorted(references.get(option_name, [])):
+    for reference in sorted(
+            references.get(option_name, []), key=lambda x: x.lower()):
         print("# " + "  " * level, "-" + reference)
         if reference in references:
             print_enabled_options(references, reference, level + 1)
@@ -301,7 +316,7 @@ def parse_options_file(filename):
 
 
 def print_warning_flags(args, references, parents, aliases, warnings):
-    for option_name in sorted(references.keys()):
+    for option_name in sorted(references.keys(), key=lambda x: x.lower()):
         option_aliases = aliases.get(option_name, [])
         if option_name not in warnings:
             is_warning = False
@@ -323,7 +338,8 @@ def print_warning_flags(args, references, parents, aliases, warnings):
                 continue
 
         if option_name in aliases:
-            sorted_aliases = sorted(aliases[option_name])
+            sorted_aliases = sorted(
+                aliases[option_name], key=lambda x: x.lower())
             print("-" + option_name, "=", "-" + ", -".join(sorted_aliases))
         else:
             print("-" + option_name)
