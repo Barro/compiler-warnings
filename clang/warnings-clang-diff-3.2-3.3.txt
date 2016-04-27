@@ -3,7 +3,6 @@
 +-Wbad-array-new-length
 +-Wbitfield-constant-conversion
 +-Wbuiltin-macro-redefined
- -Wc++-compat
 +-Wc++11-compat-pedantic
 +-Wc++1y-extensions
 +-Wc99-compat

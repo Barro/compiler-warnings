@@ -1,4 +1,8 @@
+--all-warnings
+--extra-warnings
+--pedantic
 -pedantic
+-W
 -Wabi
 -Waddress
 -Waggregate-return
@@ -15,6 +19,7 @@
 -Wchar-subscripts
 -Wclobbered
 -Wcomment
+-Wcomments
 -Wconversion
 -Wconversion-null
 -Wcoverage-mismatch
@@ -30,6 +35,7 @@
 -Wempty-body
 -Wendif-labels
 -Wenum-compare
+-Werror-implicit-function-declaration
 -Wextra
 -Wfloat-equal
 -Wformat
@@ -45,13 +51,14 @@
 -Wimplicit
 -Wimplicit-function-declaration
 -Wimplicit-int
--Wimport
+-Wimport # DUMMY switch
 -Winit-self
 -Winline
 -Wint-to-pointer-cast
 -Winvalid-offsetof
 -Winvalid-pch
 -Wjump-misses-init
+-Wlarger-than-
 -Wlarger-than=
 -Wlogical-op
 -Wlong-long
@@ -126,7 +133,7 @@
 -Wundef
 -Wuninitialized
 -Wunknown-pragmas
--Wunreachable-code
+-Wunreachable-code # DUMMY switch
 -Wunsafe-loop-optimizations
 -Wunsuffixed-float-constants
 -Wunused

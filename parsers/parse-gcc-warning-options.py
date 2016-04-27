@@ -257,6 +257,24 @@ class WarningOptionListener(GccOptionsListener.GccOptionsListener):
         self._last_name = None
 
 
+class DummyWarningListener(GccOptionsListener.GccOptionsListener):
+    """
+    Checks if switch does nothing.
+
+    >>> listener = DummyWarningListener()
+    >>> apply_listener("C C++ Warning Ignore", listener)
+    >>> listener.is_dummy
+    True
+    """
+
+    def __init__(self):
+        self.is_dummy = False
+
+    def enterVariableName(self, ctx):
+        if ctx.getText() == "Ignore":
+            self.is_dummy = True
+
+
 def print_enabled_options(references, option_name, level=1):
     for reference in sorted(
             references.get(option_name, []), key=lambda x: x.lower()):
@@ -280,6 +298,7 @@ def parse_options_file(filename):
     references = {}
     aliases = {}
     warnings = set()
+    dummies = set()
 
     for option_name, option_arguments in blocks:
         warning_option = WarningOptionListener()
@@ -292,6 +311,11 @@ def parse_options_file(filename):
 
         if option_name not in references:
             references[option_name] = []
+
+        dummy_option = DummyWarningListener()
+        apply_listener(option_arguments, dummy_option)
+        if dummy_option.is_dummy:
+            dummies.add(option_name)
 
         language_enablers = LanguagesEnabledListener()
         apply_listener(option_arguments, language_enablers)
@@ -313,10 +337,16 @@ def parse_options_file(filename):
         if alias_enablers.alias_name is not None:
             aliases[option_name] = alias_enablers.alias_name
 
-    return references, aliases, warnings
+    return references, aliases, warnings, dummies
 
 
-def print_warning_flags(args, references, parents, aliases, warnings):
+def create_dummy_text(dummies, switch_name):
+    if switch_name in dummies:
+        return " # DUMMY switch"
+    return ""
+
+
+def print_warning_flags(args, references, parents, aliases, warnings, dummies):
     for option_name in sorted(references.keys(), key=lambda x: x.lower()):
         option_aliases = aliases.get(option_name, [])
         if option_name not in warnings:
@@ -327,9 +357,10 @@ def print_warning_flags(args, references, parents, aliases, warnings):
                     break
             if not is_warning:
                 continue
+
+        dummy_text = create_dummy_text(dummies, option_name)
         if args.unique:
-            if option_name not in aliases:
-                print("-" + option_name)
+            print("-%s%s" % (option_name, dummy_text))
             continue
 
         if args.top_level:
@@ -341,9 +372,10 @@ def print_warning_flags(args, references, parents, aliases, warnings):
         if option_name in aliases:
             sorted_aliases = sorted(
                 aliases[option_name], key=lambda x: x.lower())
-            print("-" + option_name, "=", "-" + ", -".join(sorted_aliases))
+            print("-%s = -%s%s" % (
+                option_name, ", -".join(sorted_aliases), dummy_text))
         else:
-            print("-" + option_name)
+            print("-%s%s" % (option_name, dummy_text))
         print_enabled_options(references, option_name)
 
 
@@ -357,6 +389,8 @@ Parses GCC option files for warning options.""")
     all_references = {}
     all_aliases = {}
     all_warnings = set()
+    all_dummies = set()
+
     for switch, aliases in HIDDEN_WARNINGS:
         all_references[switch] = set()
         all_warnings.add(switch)
@@ -366,7 +400,8 @@ Parses GCC option files for warning options.""")
     for filename in args.option_file:
         (file_references,
          file_aliases,
-         file_warnings) = parse_options_file(filename)
+         file_warnings,
+         file_dummies) = parse_options_file(filename)
         for flag, reference in file_references.items():
             references = all_references.get(flag, set())
             all_references[flag] = references.union(reference)
@@ -375,6 +410,7 @@ Parses GCC option files for warning options.""")
             aliases.add(alias)
             all_aliases[flag] = aliases
         all_warnings = all_warnings.union(file_warnings)
+        all_dummies = all_dummies.union(file_dummies)
 
     all_parents = {}
     for flag, references in all_references.items():
@@ -388,7 +424,8 @@ Parses GCC option files for warning options.""")
         all_references,
         all_parents,
         all_aliases,
-        all_warnings)
+        all_warnings,
+        all_dummies)
 
 if __name__ == "__main__":
     main(sys.argv)

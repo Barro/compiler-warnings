@@ -134,7 +134,7 @@
 #    -Wimplicit-int
 -Wimplicit-function-declaration
 -Wimplicit-int
--Wimport
+-Wimport # DUMMY switch
 -Winherited-variadic-ctor
 -Winit-self
 -Winline
@@ -158,7 +158,7 @@
 -Wmissing-noreturn = -Wsuggest-attribute=noreturn
 -Wmissing-parameter-type
 -Wmissing-prototypes
--Wmudflap
+-Wmudflap # DUMMY switch
 -Wmultichar
 -Wnarrowing
 -Wnested-externs
@@ -232,7 +232,7 @@
 -Wuninitialized
 #    -Wmaybe-uninitialized
 -Wunknown-pragmas
--Wunreachable-code
+-Wunreachable-code # DUMMY switch
 -Wunsafe-loop-optimizations
 -Wunsuffixed-float-constants
 -Wunused

@@ -1,3 +1,4 @@
++-Wc++11-compat
 +-Wdelete-non-virtual-dtor
 +-Wfree-nonheap-object
 +-Winvalid-memory-model

@@ -1,3 +1,8 @@
+--all-warnings
+--extra-warnings
+--pedantic
+-pedantic
+-W
 -Wabi
 -Wabi-tag
 -Waddress
@@ -11,11 +16,13 @@
 -Wbuiltin-macro-redefined
 -Wc++-compat
 -Wc++0x-compat
+-Wc++11-compat
 -Wcast-align
 -Wcast-qual
 -Wchar-subscripts
 -Wclobbered
 -Wcomment
+-Wcomments
 -Wconditionally-supported
 -Wconversion
 -Wconversion-null
@@ -35,9 +42,11 @@
 -Wempty-body
 -Wendif-labels
 -Wenum-compare
+-Werror-implicit-function-declaration
 -Wextra
 -Wfloat-conversion
 -Wfloat-equal
+-Wformat
 -Wformat-contains-nul
 -Wformat-extra-args
 -Wformat-nonliteral
@@ -51,7 +60,7 @@
 -Wimplicit
 -Wimplicit-function-declaration
 -Wimplicit-int
--Wimport
+-Wimport # DUMMY switch
 -Winherited-variadic-ctor
 -Winit-self
 -Winline
@@ -60,6 +69,7 @@
 -Winvalid-offsetof
 -Winvalid-pch
 -Wjump-misses-init
+-Wlarger-than-
 -Wlarger-than=
 -Wliteral-suffix
 -Wlogical-op
@@ -69,10 +79,12 @@
 -Wmissing-braces
 -Wmissing-declarations
 -Wmissing-field-initializers
+-Wmissing-format-attribute
 -Wmissing-include-dirs
+-Wmissing-noreturn
 -Wmissing-parameter-type
 -Wmissing-prototypes
--Wmudflap
+-Wmudflap # DUMMY switch
 -Wmultichar
 -Wnarrowing
 -Wnested-externs
@@ -141,7 +153,7 @@
 -Wundef
 -Wuninitialized
 -Wunknown-pragmas
--Wunreachable-code
+-Wunreachable-code # DUMMY switch
 -Wunsafe-loop-optimizations
 -Wunsuffixed-float-constants
 -Wunused

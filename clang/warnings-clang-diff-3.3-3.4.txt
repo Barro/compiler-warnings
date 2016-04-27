@@ -1,5 +1,4 @@
 +-Wbridge-cast
- -Wc++-compat
 +-Wc++11-compat-deprecated-writable-strings
 +-Wc++98-c++11-compat
 +-Wc++98-c++11-compat-pedantic

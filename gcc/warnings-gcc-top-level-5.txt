@@ -111,7 +111,7 @@
 -Wformat-signedness
 -Wframe-larger-than=
 -Wfree-nonheap-object
--Wimport
+-Wimport # DUMMY switch
 -Wincompatible-pointer-types
 -Winherited-variadic-ctor
 -Winline
@@ -127,7 +127,7 @@
 -Wmissing-declarations
 -Wmissing-include-dirs
 -Wmissing-prototypes
--Wmudflap
+-Wmudflap # DUMMY switch
 -Wmultichar
 -Wnested-externs
 -Wnoexcept
@@ -188,7 +188,7 @@
 -Wtrampolines
 -Wundeclared-selector
 -Wundef
--Wunreachable-code
+-Wunreachable-code # DUMMY switch
 -Wunsafe-loop-optimizations
 -Wunsuffixed-float-constants
 -Wunused-macros

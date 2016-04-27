@@ -95,7 +95,7 @@
 -Wfloat-equal
 -Wframe-larger-than=
 -Wfree-nonheap-object
--Wimport
+-Wimport # DUMMY switch
 -Winherited-variadic-ctor
 -Winline
 -Wint-to-pointer-cast
@@ -110,7 +110,7 @@
 -Wmissing-declarations
 -Wmissing-include-dirs
 -Wmissing-prototypes
--Wmudflap
+-Wmudflap # DUMMY switch
 -Wmultichar
 -Wnested-externs
 -Wnoexcept
@@ -161,7 +161,7 @@
 -Wtrigraphs
 -Wundeclared-selector
 -Wundef
--Wunreachable-code
+-Wunreachable-code # DUMMY switch
 -Wunsafe-loop-optimizations
 -Wunsuffixed-float-constants
 -Wunused-macros

@@ -2,4 +2,6 @@
 +-Wdate-time
 +-Wdelete-incomplete
 +-Wfloat-conversion
+--Wmudflap
++-Wmudflap # DUMMY switch
 +-Wopenmp-simd

@@ -1,3 +1,8 @@
+--all-warnings
+--extra-warnings
+--pedantic
+-pedantic
+-W
 -Wabi
 -Wabi-tag
 -Wabi=
@@ -14,6 +19,7 @@
 -Wbuiltin-macro-redefined
 -Wc++-compat
 -Wc++0x-compat
+-Wc++11-compat
 -Wc++14-compat
 -Wc90-c99-compat
 -Wc99-c11-compat
@@ -23,6 +29,7 @@
 -Wchkp
 -Wclobbered
 -Wcomment
+-Wcomments
 -Wconditionally-supported
 -Wconversion
 -Wconversion-null
@@ -45,9 +52,11 @@
 -Wempty-body
 -Wendif-labels
 -Wenum-compare
+-Werror-implicit-function-declaration
 -Wextra
 -Wfloat-conversion
 -Wfloat-equal
+-Wformat
 -Wformat-contains-nul
 -Wformat-extra-args
 -Wformat-nonliteral
@@ -62,7 +71,7 @@
 -Wimplicit
 -Wimplicit-function-declaration
 -Wimplicit-int
--Wimport
+-Wimport # DUMMY switch
 -Wincompatible-pointer-types
 -Winherited-variadic-ctor
 -Winit-self
@@ -73,6 +82,7 @@
 -Winvalid-offsetof
 -Winvalid-pch
 -Wjump-misses-init
+-Wlarger-than-
 -Wlarger-than=
 -Wliteral-suffix
 -Wlogical-not-parentheses
@@ -84,10 +94,12 @@
 -Wmissing-braces
 -Wmissing-declarations
 -Wmissing-field-initializers
+-Wmissing-format-attribute
 -Wmissing-include-dirs
+-Wmissing-noreturn
 -Wmissing-parameter-type
 -Wmissing-prototypes
--Wmudflap
+-Wmudflap # DUMMY switch
 -Wmultichar
 -Wnarrowing
 -Wnested-externs
@@ -95,6 +107,7 @@
 -Wnon-template-friend
 -Wnon-virtual-dtor
 -Wnonnull
+-Wnormalized
 -Wnormalized=
 -Wodr
 -Wold-style-cast
@@ -166,7 +179,7 @@
 -Wundef
 -Wuninitialized
 -Wunknown-pragmas
--Wunreachable-code
+-Wunreachable-code # DUMMY switch
 -Wunsafe-loop-optimizations
 -Wunsuffixed-float-constants
 -Wunused

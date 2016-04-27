@@ -55,7 +55,6 @@ options lists are available below:
   • [top level](gcc/warnings-gcc-top-level-5.txt)
   • [unique](gcc/warnings-gcc-unique-5.txt)
   • [diff](gcc/warnings-gcc-diff-4.9-5.txt)
-  (covers GCC 5.1, 5.2, 5.3)
 * GCC 4.9 [all](gcc/warnings-gcc-4.9.txt)
   • [top level](gcc/warnings-gcc-top-level-4.9.txt)
   • [unique](gcc/warnings-gcc-unique-4.9.txt)

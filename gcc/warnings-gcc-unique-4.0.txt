@@ -1,4 +1,8 @@
+--all-warnings
+--extra-warnings
+--pedantic
 -pedantic
+-W
 -Wabi
 -Waggregate-return
 -Wall

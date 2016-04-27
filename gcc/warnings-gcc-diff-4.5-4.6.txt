@@ -1,10 +1,14 @@
 +-Wcpp
 +-Wdouble-promotion
+--Wimport
++-Wimport # DUMMY switch
 +-Wnoexcept
 +-Wproperty-assign-default
 +-Wsuggest-attribute=const
 +-Wsuggest-attribute=noreturn
 +-Wsuggest-attribute=pure
 +-Wtrampolines
+--Wunreachable-code
++-Wunreachable-code # DUMMY switch
 +-Wunused-but-set-parameter
 +-Wunused-but-set-variable
