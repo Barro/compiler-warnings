@@ -13,9 +13,9 @@ function parse_gcc_info()
     "$DIR"/parse-gcc-warning-options.py "${input_files[@]}" \
           > "$target_dir"/warnings-gcc-"$version".txt
     "$DIR"/parse-gcc-warning-options.py --unique "${input_files[@]}" \
-          > "$target_dir"//warnings-gcc-unique-"$version".txt
+          > "$target_dir"/warnings-gcc-unique-"$version".txt
     "$DIR"/parse-gcc-warning-options.py --top-level "${input_files[@]}" \
-          > "$target_dir"/gcc/warnings-gcc-top-level-"$version".txt
+          > "$target_dir"/warnings-gcc-top-level-"$version".txt
 }
 
 GIT_DIR=$1
@@ -41,7 +41,7 @@ git -C "$GIT_DIR" checkout gcc-4_4_7-release
 parse_gcc_info 4.4 "$target_dir" "$GIT_DIR"/gcc/{common.opt,c.opt}
 
 git -C "$GIT_DIR" checkout gcc-4_5_4-release
-parse_gcc_info 4.5 "$target_dir" "$GIT_DIR"/gcc/{common.opt,c-family/c.opt}
+parse_gcc_info 4.5 "$target_dir" "$GIT_DIR"/gcc/{common.opt,c.opt}
 
 git -C "$GIT_DIR" checkout gcc-4_6_4-release
 parse_gcc_info 4.6 "$target_dir" "$GIT_DIR"/gcc/{common.opt,c-family/c.opt}
@@ -76,7 +76,6 @@ versions=(
 seq 2 "${#versions[@]}" | while read -r current_version in ; do
     current=${versions[$(( current_version - 2 ))]}
     next=${versions[$(( current_version - 1 ))]}
-    echo "$current $next"
     "$DIR"/create-diff.sh \
           "$target_dir"/warnings-gcc-unique-"$current".txt \
           "$target_dir"/warnings-gcc-unique-"$next".txt \

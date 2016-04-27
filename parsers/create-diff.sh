@@ -1,5 +1,5 @@
 #!/bin/bash
 
-set -euo pipefail
+set -eu
 
 diff -Naur "$1" "$2" | egrep "^[\-+]-" | sort
