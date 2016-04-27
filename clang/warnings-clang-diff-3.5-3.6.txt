@@ -1,5 +1,8 @@
+--Warc-abi # DUMMY switch
 +-Wat-protocol
 +-Wc++14-extensions
+--Wcast-qual # DUMMY switch
++-Wcast-qual
 +-Wcstring-format-directive
 +-Wdelete-incomplete
 +-Wexplicit-initialize-call

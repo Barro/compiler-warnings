@@ -3,12 +3,14 @@
 +-Wbad-array-new-length
 +-Wbitfield-constant-conversion
 +-Wbuiltin-macro-redefined
+ -Wc++-compat
 +-Wc++11-compat-pedantic
 +-Wc++1y-extensions
 +-Wc99-compat
 +-Wconfig-macros
 +-Wcxx98-cxx11-compat
 +-Wcxx98-cxx11-compat-pedantic
+--Wdefault-arg-special-member
 +-Wdangling-field
 +-Wdeprecated-objc-isa-usage
 +-Wdistributed-object-modifiers
@@ -17,7 +19,9 @@
 +-Wincompatible-pointer-types-discards-qualifiers
 +-Winvalid-noreturn
 +-Winvalid-source-encoding
+--Wlambda-extensions
 +-Wmethod-signatures
+--Wmodule-build
 +-Wmissing-noreturn
 +-Wmodule-conflict
 +-Wnon-pod-varargs
@@ -26,6 +30,8 @@
 +-Woverloaded-shift-op-parentheses
 +-Wreinterpret-base-class
 +-Wreturn-stack-address
+--Wsequence-point # DUMMY switch
++-Wsequence-point
 +-Wsizeof-array-decay
 +-Wsizeof-pointer-memaccess
 +-Wsource-uses-openmp

@@ -1,8 +1,11 @@
 +-Wbridge-cast
+ -Wc++-compat
 +-Wc++11-compat-deprecated-writable-strings
 +-Wc++98-c++11-compat
 +-Wc++98-c++11-compat-pedantic
 +-Wconsumed
+--Wcxx98-cxx11-compat
+--Wcxx98-cxx11-compat-pedantic
 +-Wdeprecated-increment-bool
 +-Wdeprecated-objc-pointer-introspection
 +-Wdeprecated-objc-pointer-introspection-performSelector

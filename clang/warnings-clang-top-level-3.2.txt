@@ -9,11 +9,11 @@
 #     -Wunused-parameter
 -W#pragma-messages
 -W#warnings
--Wabi
+-Wabi # DUMMY switch
 -Wabstract-final-class
--Waddress
+-Waddress # DUMMY switch
 -Waddress-of-temporary
--Waggregate-return
+-Waggregate-return # DUMMY switch
 -Wall
 #   -Wmost
 #     -Wcast-of-sel-type
@@ -72,7 +72,7 @@
 #   -Warc-non-pod-memaccess
 #   -Warc-retain-cycles
 #   -Warc-unsafe-retained-assign
--Warc-abi
+-Warc-abi # DUMMY switch
 -Warc-repeated-use-of-weak
 #   -Warc-maybe-repeated-use-of-weak
 -Wasm
@@ -108,8 +108,8 @@
 -Wc11-extensions
 -Wc99-extensions
 -Wcast-align
--Wcast-qual
--Wchar-align
+-Wcast-qual # DUMMY switch
+-Wchar-align # DUMMY switch
 -Wcomments
 #   -Wcomment
 -Wcompare-distinct-pointer-types
@@ -117,15 +117,15 @@
 -Wconversion-null
 #   -Wnull-conversion
 -Wcovered-switch-default
--Wctor-dtor-privacy
+-Wctor-dtor-privacy # DUMMY switch
 -Wdefault-arg-special-member
 -Wdelegating-ctor-cycles
 -Wdeprecated
 #   -Wdeprecated-declarations
 -Wdeprecated-implementations
--Wdisabled-optimization
--Wdiscard-qual
--Wdiv-by-zero
+-Wdisabled-optimization # DUMMY switch
+-Wdiscard-qual # DUMMY switch
+-Wdiv-by-zero # DUMMY switch
 -Wdivision-by-zero
 -Wdocumentation
 #   -Wdocumentation-deprecated-sync
@@ -134,7 +134,7 @@
 -Wduplicate-decl-specifier
 -Wduplicate-method-arg
 -Wduplicate-method-match
--Weffc++
+-Weffc++ # DUMMY switch
 -Wempty-body
 -Wendif-labels
 #   -Wextra-tokens
@@ -160,15 +160,15 @@
 -Wimplicit-conversion-floating-point-to-bool
 -Wimplicit-fallthrough
 #   -Wimplicit-fallthrough-per-function
--Wimport
+-Wimport # DUMMY switch
 -Wincompatible-pointer-types
 -Wincomplete-umbrella
--Winit-self
--Winline
+-Winit-self # DUMMY switch
+-Winline # DUMMY switch
 -Wint-conversions
 #   -Wint-conversion
 -Winvalid-offsetof
--Winvalid-pch
+-Winvalid-pch # DUMMY switch
 -Winvalid-pp-token
 -Wknr-promoted-parameter
 -Wlambda-extensions
@@ -184,12 +184,12 @@
 -Wmismatched-parameter-types
 -Wmismatched-return-types
 -Wmissing-declarations
--Wmissing-format-attribute
--Wmissing-include-dirs
+-Wmissing-format-attribute # DUMMY switch
+-Wmissing-include-dirs # DUMMY switch
 -Wmodule-build
 -Wnarrowing
 #   -Wc++11-narrowing
--Wnested-externs
+-Wnested-externs # DUMMY switch
 -Wnon-gcc
 #   -Wconversion
 #     -Wbool-conversion
@@ -205,7 +205,7 @@
 #   -Wliteral-range
 #   -Wsign-compare
 -Wnon-virtual-dtor
--Wnonportable-cfstrings
+-Wnonportable-cfstrings # DUMMY switch
 -WNSObject-attribute
 -Wnull-character
 -Wnull-dereference
@@ -222,57 +222,57 @@
 -Wobjc-protocol-method-implementation
 -Wobjc-readonly-with-setter-property
 -Wobjc-root-class
--Wold-style-cast
--Wold-style-definition
+-Wold-style-cast # DUMMY switch
+-Wold-style-definition # DUMMY switch
 -Wout-of-line-declaration
 -Wover-aligned
--Woverflow
+-Woverflow # DUMMY switch
 -Woverlength-strings
 -Woverriding-method-mismatch
 -Wpacked
 -Wpadded
 -Wpedantic
 -Wpointer-arith
--Wpointer-to-int-cast
+-Wpointer-to-int-cast # DUMMY switch
 -Wprotocol
 -Wreadonly-setter-attrs
 -Wreceiver-expr
 -Wreceiver-forward-class
--Wredundant-decls
+-Wredundant-decls # DUMMY switch
 -Wreserved-user-defined-literal
 #   -Wc++11-compat-reserved-user-defined-literal
 -Wsection
 -Wselector
 -Wsentinel
--Wsequence-point
+-Wsequence-point # DUMMY switch
 -Wshadow
--Wsign-promo
--Wstack-protector
--Wstrict-aliasing
--Wstrict-aliasing=0
--Wstrict-aliasing=1
--Wstrict-aliasing=2
--Wstrict-overflow
--Wstrict-overflow=0
--Wstrict-overflow=1
--Wstrict-overflow=2
--Wstrict-overflow=3
--Wstrict-overflow=4
--Wstrict-overflow=5
--Wstrict-prototypes
+-Wsign-promo # DUMMY switch
+-Wstack-protector # DUMMY switch
+-Wstrict-aliasing # DUMMY switch
+-Wstrict-aliasing=0 # DUMMY switch
+-Wstrict-aliasing=1 # DUMMY switch
+-Wstrict-aliasing=2 # DUMMY switch
+-Wstrict-overflow # DUMMY switch
+-Wstrict-overflow=0 # DUMMY switch
+-Wstrict-overflow=1 # DUMMY switch
+-Wstrict-overflow=2 # DUMMY switch
+-Wstrict-overflow=3 # DUMMY switch
+-Wstrict-overflow=4 # DUMMY switch
+-Wstrict-overflow=5 # DUMMY switch
+-Wstrict-prototypes # DUMMY switch
 -Wstrict-selector-match
 -Wstrncat-size
 -Wsuper-class-method-mismatch
--Wswitch-default
+-Wswitch-default # DUMMY switch
 -Wswitch-enum
--Wsynth
+-Wsynth # DUMMY switch
 -Wtautological-compare
 #   -Wtautological-constant-out-of-range-compare
 -Wthread-safety
 #   -Wthread-safety-analysis
 #   -Wthread-safety-attributes
 #   -Wthread-safety-precise
--Wtype-limits
+-Wtype-limits # DUMMY switch
 -Wtype-safety
 -Wundeclared-selector
 -Wunicode

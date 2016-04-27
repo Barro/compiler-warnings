@@ -13,7 +13,7 @@
 +-Wpartial-availability
 +-Wpessimizing-move
 +-Wrange-loop-analysis
-+-Wreceiver-is-weak
++-Wreceiver-is-weak # DUMMY switch
 +-Wredundant-move
 +-Wunknown-sanitizers
 +-Wunsupported-nan

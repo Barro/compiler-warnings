@@ -1,4 +1,6 @@
 +-Wabsolute-value
+--Waddress # DUMMY switch
++-Waddress
 +-Wbackend-plugin
 +-Wc++14-compat
 +-Wc++14-compat-pedantic
@@ -22,7 +24,10 @@
 +-Wnon-modular-include-in-framework-module
 +-Wnon-modular-include-in-module
 +-Wobjc-designated-initializers
+--Wobjc-literal-missing-atsign
 +-Wobjc-literal-conversion
+--Wold-style-cast # DUMMY switch
++-Wold-style-cast
 +-Wopenmp-clauses
 +-Wopenmp-loop-form
 +-Wpass
@@ -33,6 +38,7 @@
 +-Wpragmas
 +-Wprofile-instr-out-of-date
 +-Wprofile-instr-unprofiled
+--Wreadonly-setter-attrs
 +-Wremark-backend-plugin
 +-Wstring-compare
 +-Wswitch-bool
@@ -47,4 +53,5 @@
 +-Wunreachable-code-break
 +-Wunreachable-code-loop-increment
 +-Wunreachable-code-return
+--Wunused-sanitize-argument
 +-Wwritable-strings

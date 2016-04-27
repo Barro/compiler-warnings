@@ -69,6 +69,25 @@ class ClangDiagnosticGroupsListener(TableGenListener.TableGenListener):
         self.currentReferences.append(ctx.getText())
 
 
+def is_dummy_switch(diagnostics, switch_name):
+    """Determines if a switch does nothing
+
+    Dummy switch is such switch that has no children and does not
+    belong to any class. It should therefore do nothing."""
+
+    class_name = diagnostics.switchNames[switch_name]
+    has_class = class_name is not None
+    references = diagnostics.switchClassesReferences.get(switch_name, [])
+    has_reference = len(references) > 0
+    return not (has_class or has_reference)
+
+
+def create_dummy_text(diagnostics, switch_name):
+    if is_dummy_switch(diagnostics, switch_name):
+        return " # DUMMY switch"
+    return ""
+
+
 def print_references(diagnostics, switch_name, level):
     references = diagnostics.switchClassesReferences.get(switch_name, [])
     reference_switches = []
@@ -77,7 +96,9 @@ def print_references(diagnostics, switch_name, level):
         reference_switches.append(reference_switch_name)
     for reference_switch_name in sorted(
             reference_switches, key=lambda x: x.lower()):
-        print("# %s-W%s" % ("  " * level, reference_switch_name))
+        dummy_string = create_dummy_text(diagnostics, reference_switch_name)
+        print("# %s-W%s%s" % (
+            "  " * level, reference_switch_name, dummy_string))
         print_references(diagnostics, reference_switch_name, level + 1)
 
 
@@ -112,7 +133,8 @@ The path of clang diagnostic groups file.
             diagnostics.switchNames.keys(), key=lambda x: x.lower()):
         if args.top_level and not is_root_class(diagnostics, name):
             continue
-        print("-W%s" % name)
+        dummy_string = create_dummy_text(diagnostics, name)
+        print("-W%s%s" % (name, dummy_string))
         if args.unique:
             continue
         print_references(diagnostics, name, 1)
