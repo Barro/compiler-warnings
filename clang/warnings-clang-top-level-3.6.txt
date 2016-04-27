@@ -9,7 +9,6 @@
 #     -Wunused-parameter
 -W#pragma-messages
 -W#warnings
--WNSObject-attribute
 -Wabi
 -Wabsolute-value
 -Wabstract-final-class
@@ -328,6 +327,7 @@
 #   -Wsign-compare
 -Wnon-virtual-dtor
 -Wnonportable-cfstrings
+-WNSObject-attribute
 -Wnull-arithmetic
 -Wnull-character
 -Wnull-dereference

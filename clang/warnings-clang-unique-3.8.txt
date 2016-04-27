@@ -1,9 +1,6 @@
 -W
 -W#pragma-messages
 -W#warnings
--WCL4
--WIndependentClass-attribute
--WNSObject-attribute
 -Wabi
 -Wabsolute-value
 -Wabstract-final-class
@@ -77,6 +74,7 @@
 -Wcast-qual
 -Wchar-align
 -Wchar-subscripts
+-WCL4
 -Wclass-varargs
 -Wcomment
 -Wcomments
@@ -202,6 +200,7 @@
 -Wincomplete-umbrella
 -Winconsistent-missing-override
 -Wincrement-bool
+-WIndependentClass-attribute
 -Winfinite-recursion
 -Winit-self
 -Winitializer-overrides
@@ -292,6 +291,7 @@
 -Wnon-virtual-dtor
 -Wnonnull
 -Wnonportable-cfstrings
+-WNSObject-attribute
 -Wnull-arithmetic
 -Wnull-character
 -Wnull-conversion

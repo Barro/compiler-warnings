@@ -9,7 +9,6 @@
 #     -Wunused-parameter
 -W#pragma-messages
 -W#warnings
--WNSObject-attribute
 -Wabi
 -Wabstract-final-class
 -Waddress
@@ -207,6 +206,7 @@
 #   -Wsign-compare
 -Wnon-virtual-dtor
 -Wnonportable-cfstrings
+-WNSObject-attribute
 -Wnull-character
 -Wnull-dereference
 -Wobjc-cocoa-api

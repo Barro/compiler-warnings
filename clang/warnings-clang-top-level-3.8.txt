@@ -9,87 +9,6 @@
 #     -Wunused-parameter
 -W#pragma-messages
 -W#warnings
--WCL4
-#   -Wall
-#     -Wmost
-#       -Wcast-of-sel-type
-#       -Wchar-subscripts
-#       -Wcomment
-#       -Wdelete-non-virtual-dtor
-#       -Wextern-c-compat
-#       -Wfor-loop-analysis
-#       -Wformat
-#         -Wformat-extra-args
-#         -Wformat-invalid-specifier
-#         -Wformat-security
-#         -Wformat-y2k
-#         -Wformat-zero-length
-#         -Wnonnull
-#       -Wimplicit
-#         -Wimplicit-function-declaration
-#         -Wimplicit-int
-#       -Winfinite-recursion
-#       -Wmismatched-tags
-#       -Wmissing-braces
-#       -Wmove
-#         -Wpessimizing-move
-#         -Wredundant-move
-#         -Wself-move
-#       -Wmultichar
-#       -Wobjc-designated-initializers
-#       -Wobjc-missing-super-calls
-#       -Woverloaded-virtual
-#       -Wprivate-extern
-#       -Wreorder
-#       -Wreturn-type
-#         -Wreturn-type-c-linkage
-#       -Wself-assign
-#         -Wself-assign-field
-#       -Wself-move
-#       -Wsizeof-array-argument
-#       -Wsizeof-array-decay
-#       -Wstring-plus-int
-#       -Wtrigraphs
-#       -Wuninitialized
-#         -Wsometimes-uninitialized
-#         -Wstatic-self-init
-#       -Wunknown-pragmas
-#       -Wunused
-#         -Wunused-argument
-#         -Wunused-function
-#           -Wunneeded-internal-declaration
-#         -Wunused-label
-#         -Wunused-local-typedef
-#         -Wunused-private-field
-#         -Wunused-property-ivar
-#         -Wunused-value
-#           -Wunevaluated-expression
-#             -Wpotentially-evaluated-expression
-#           -Wunused-comparison
-#           -Wunused-result
-#         -Wunused-variable
-#           -Wunused-const-variable
-#       -Wvolatile-register-var
-#     -Wparentheses
-#       -Wbitwise-op-parentheses
-#       -Wdangling-else
-#       -Wlogical-not-parentheses
-#       -Wlogical-op-parentheses
-#       -Woverloaded-shift-op-parentheses
-#       -Wparentheses-equality
-#       -Wshift-op-parentheses
-#     -Wswitch
-#     -Wswitch-bool
-#   -Wextra
-#     -Wignored-qualifiers
-#     -Winitializer-overrides
-#     -Wmissing-field-initializers
-#     -Wmissing-method-return-type
-#     -Wsemicolon-before-method-body
-#     -Wsign-compare
-#     -Wunused-parameter
--WIndependentClass-attribute
--WNSObject-attribute
 -Wabi
 -Wabsolute-value
 -Wabstract-final-class
@@ -182,6 +101,85 @@
 -Wcast-align
 -Wcast-qual
 -Wchar-align
+-WCL4
+#   -Wall
+#     -Wmost
+#       -Wcast-of-sel-type
+#       -Wchar-subscripts
+#       -Wcomment
+#       -Wdelete-non-virtual-dtor
+#       -Wextern-c-compat
+#       -Wfor-loop-analysis
+#       -Wformat
+#         -Wformat-extra-args
+#         -Wformat-invalid-specifier
+#         -Wformat-security
+#         -Wformat-y2k
+#         -Wformat-zero-length
+#         -Wnonnull
+#       -Wimplicit
+#         -Wimplicit-function-declaration
+#         -Wimplicit-int
+#       -Winfinite-recursion
+#       -Wmismatched-tags
+#       -Wmissing-braces
+#       -Wmove
+#         -Wpessimizing-move
+#         -Wredundant-move
+#         -Wself-move
+#       -Wmultichar
+#       -Wobjc-designated-initializers
+#       -Wobjc-missing-super-calls
+#       -Woverloaded-virtual
+#       -Wprivate-extern
+#       -Wreorder
+#       -Wreturn-type
+#         -Wreturn-type-c-linkage
+#       -Wself-assign
+#         -Wself-assign-field
+#       -Wself-move
+#       -Wsizeof-array-argument
+#       -Wsizeof-array-decay
+#       -Wstring-plus-int
+#       -Wtrigraphs
+#       -Wuninitialized
+#         -Wsometimes-uninitialized
+#         -Wstatic-self-init
+#       -Wunknown-pragmas
+#       -Wunused
+#         -Wunused-argument
+#         -Wunused-function
+#           -Wunneeded-internal-declaration
+#         -Wunused-label
+#         -Wunused-local-typedef
+#         -Wunused-private-field
+#         -Wunused-property-ivar
+#         -Wunused-value
+#           -Wunevaluated-expression
+#             -Wpotentially-evaluated-expression
+#           -Wunused-comparison
+#           -Wunused-result
+#         -Wunused-variable
+#           -Wunused-const-variable
+#       -Wvolatile-register-var
+#     -Wparentheses
+#       -Wbitwise-op-parentheses
+#       -Wdangling-else
+#       -Wlogical-not-parentheses
+#       -Wlogical-op-parentheses
+#       -Woverloaded-shift-op-parentheses
+#       -Wparentheses-equality
+#       -Wshift-op-parentheses
+#     -Wswitch
+#     -Wswitch-bool
+#   -Wextra
+#     -Wignored-qualifiers
+#     -Winitializer-overrides
+#     -Wmissing-field-initializers
+#     -Wmissing-method-return-type
+#     -Wsemicolon-before-method-body
+#     -Wsign-compare
+#     -Wunused-parameter
 -Wclass-varargs
 #   -Wnon-pod-varargs
 -Wcomments
@@ -295,6 +293,7 @@
 -Winconsistent-missing-override
 -Wincrement-bool
 #   -Wdeprecated-increment-bool
+-WIndependentClass-attribute
 -Winit-self
 -Winline
 -Winline-asm
@@ -392,6 +391,7 @@
 #   -Wsign-compare
 -Wnon-virtual-dtor
 -Wnonportable-cfstrings
+-WNSObject-attribute
 -Wnull-arithmetic
 -Wnull-character
 -Wnull-dereference

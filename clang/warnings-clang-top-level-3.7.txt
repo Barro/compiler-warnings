@@ -9,8 +9,6 @@
 #     -Wunused-parameter
 -W#pragma-messages
 -W#warnings
--WIndependentClass-attribute
--WNSObject-attribute
 -Wabi
 -Wabsolute-value
 -Wabstract-final-class
@@ -273,6 +271,7 @@
 #   -Wnon-modular-include-in-module
 #     -Wnon-modular-include-in-framework-module
 -Winconsistent-missing-override
+-WIndependentClass-attribute
 -Winit-self
 -Winline
 -Winline-asm
@@ -339,6 +338,7 @@
 #   -Wsign-compare
 -Wnon-virtual-dtor
 -Wnonportable-cfstrings
+-WNSObject-attribute
 -Wnull-arithmetic
 -Wnull-character
 -Wnull-dereference

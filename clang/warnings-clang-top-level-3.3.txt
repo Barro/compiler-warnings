@@ -9,7 +9,6 @@
 #     -Wunused-parameter
 -W#pragma-messages
 -W#warnings
--WNSObject-attribute
 -Wabi
 -Wabstract-final-class
 -Waddress
@@ -234,6 +233,7 @@
 -Wnon-pod-varargs
 -Wnon-virtual-dtor
 -Wnonportable-cfstrings
+-WNSObject-attribute
 -Wnull-arithmetic
 -Wnull-character
 -Wnull-dereference

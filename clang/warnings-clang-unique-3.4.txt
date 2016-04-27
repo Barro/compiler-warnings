@@ -1,7 +1,6 @@
 -W
 -W#pragma-messages
 -W#warnings
--WNSObject-attribute
 -Wabi
 -Wabstract-final-class
 -Waddress
@@ -213,6 +212,7 @@
 -Wnon-virtual-dtor
 -Wnonnull
 -Wnonportable-cfstrings
+-WNSObject-attribute
 -Wnull-arithmetic
 -Wnull-character
 -Wnull-conversion
