@@ -61,7 +61,7 @@ below:
 * [GCC 4.7 warnings](gcc/warnings-gcc-4.7.txt)
 * [GCC 4.8 warnings](gcc/warnings-gcc-4.8.txt)
 * [GCC 4.9 warnings](gcc/warnings-gcc-4.9.txt)
-* [GCC 5.x warnings](gcc/warnings-gcc-5.txt) (covers GCC 5.1, 5.2, 5.3)
+* [GCC 5 warnings](gcc/warnings-gcc-5.txt) (covers GCC 5.1, 5.2, 5.3)
 
 # Requirements
 
