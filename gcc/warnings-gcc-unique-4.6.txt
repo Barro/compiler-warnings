@@ -1,3 +1,4 @@
+-pedantic
 -Wabi
 -Waddress
 -Waggregate-return

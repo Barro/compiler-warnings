@@ -1,5 +1,7 @@
 --all-warnings = -Wall
 --extra-warnings = -Wextra
+--pedantic = -pedantic
+-pedantic
 -W = -Wextra
 -Wabi
 -Waddress

@@ -25,19 +25,20 @@ NON_WARNING_WS = set([
     "Wfatal-errors",
 ])
 
-# Pedantic is always in but in the options file it is only in 4.8 and later
-# GCC versions.
 WARNINGS_NON_W = set([
     "pedantic",
 ])
 
-# These go into common.opt in GCC 4.6 but before that they are aliases:
-HIDDEN_WARNINGS = set([
-    ("-all-warnings", "Wall"),
-    ("-extra-warnings", "Wextra"),
-    ("-pedantic", "pedantic"),
-    ("W", "Wextra"),
-])
+# Many of these go into common.opt in GCC 4.6 but before that they are aliases:
+HIDDEN_WARNINGS = [
+    # Pedantic is always in but in the options file it is only in 4.8 and later
+    # GCC versions.
+    ("pedantic", []),
+    ("-all-warnings", ["Wall"]),
+    ("-extra-warnings", ["Wextra"]),
+    ("-pedantic", ["pedantic"]),
+    ("W", ["Wextra"]),
+]
 
 
 def parse_warning_blocks(fp):
@@ -356,6 +357,11 @@ Parses GCC option files for warning options.""")
     all_references = {}
     all_aliases = {}
     all_warnings = set()
+    for switch, aliases in HIDDEN_WARNINGS:
+        all_references[switch] = set()
+        all_warnings.add(switch)
+        if len(aliases):
+            all_aliases[switch] = set(aliases)
 
     for filename in args.option_file:
         (file_references,

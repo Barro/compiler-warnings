@@ -1,4 +1,4 @@
--W
+-pedantic
 -Wabi
 -Waggregate-return
 -Wall
