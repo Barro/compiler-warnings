@@ -1,4 +1,4 @@
-# C/C++/Objective-C compiler warning flags collection and parser
+# C/C++/Objective-C compiler warning flags collection and parsers
 
 This project includes tools and lists to figure out all warning flags
 that [clang compiler](http://clang.llvm.org/) and
