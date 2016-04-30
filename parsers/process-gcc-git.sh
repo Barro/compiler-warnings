@@ -58,6 +58,9 @@ parse_gcc_info 4.9 "$target_dir" "$GIT_DIR"/gcc/{common.opt,c-family/c.opt}
 git -C "$GIT_DIR" checkout gcc-5_3_0-release
 parse_gcc_info 5 "$target_dir" "$GIT_DIR"/gcc/{common.opt,c-family/c.opt}
 
+git -C "$GIT_DIR" checkout gcc-6_1_0-release
+parse_gcc_info 6 "$target_dir" "$GIT_DIR"/gcc/{common.opt,c-family/c.opt}
+
 versions=(
     3.4
     4.0
@@ -71,6 +74,7 @@ versions=(
     4.8
     4.9
     5
+    6
 )
 
 seq 2 "${#versions[@]}" | while read -r current_version in ; do
