@@ -106,7 +106,17 @@ options lists are available below:
   • [unique](gcc/warnings-gcc-unique-3.4.txt)
   (first GCC with domain specific language options file)
 
-# Requirements
+## Examining differences
+
+One use case for these kinds of lists is to see what differences there
+are between different compilers and compiler versions. I have made
+available rudimentary compiler flag differences between two consequent
+compiler versions as diff-files, but for more specific differences you
+need to use some (visual) diff program, as shown below:
+
+![Some GCC 5 and 6 -Wall differences shown with meld](gcc/meld-gcc-5-6-wall.png)
+
+# Development
 
 This uses [ANTLR](http://www.antlr.org/) as a parser generator with
 some supporting Python code to parse warning flags from actual
@@ -118,7 +128,7 @@ their dependencies):
 * [Python 2.7](https://www.python.org/)
 * [antlr4-python2-runtime](https://pypi.python.org/pypi/antlr4-python2-runtime/)
 
-# Usage
+## Building
 
 After you have installed all the requirements and are able to run
 ANTLR with `antlr4` command, just use following commands in `parsers/`
