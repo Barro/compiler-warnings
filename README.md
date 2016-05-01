@@ -116,7 +116,7 @@ need to use some (visual) diff program, as shown below:
 
 ![Some GCC 5 and 6 -Wall differences shown with meld](gcc/meld-gcc-5-6-wall.png)
 
-# Development
+# Development [![Build Status](https://travis-ci.org/Barro/compiler-warnings.svg?branch=master)](https://travis-ci.org/Barro/compiler-warnings)
 
 This uses [ANTLR](http://www.antlr.org/) as a parser generator with
 some supporting Python code to parse warning flags from actual
