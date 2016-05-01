@@ -1,9 +1,15 @@
+sudo: required
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -qq antlr4 ninja-build
+  - sudo apt-get install -qq ninja-build
 
 language: python
 python:
   - "2.7"
-install: "pip install -r parsers/requirements.txt"
+install:
+  - "wget -O antlr.jar http://www.antlr.org/download/antlr-4.5.3-complete.jar"
+  - "echo -e '#!/bin/sh\nexec java -jar \"$(dirname \"$0\")\"/antlr.jar' > antlr"
+  - chmod 755 antlr
+  - export PATH="$PWD:$PATH"
+  - "pip install -r parsers/requirements.txt"
 script: ninja -C parsers/ test
