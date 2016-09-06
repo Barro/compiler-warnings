@@ -1,0 +1,15 @@
++-Wclang-cl-pch
++-Wexpansion-to-defined
++-Wfloat-overflow-conversion
++-Wfloat-zero-conversion
++-Winconsistent-dllimport
++-Wopenmp-target
+--Wreceiver-is-weak # DUMMY switch
++-Wshadow-all
++-Wshadow-field-in-constructor
++-Wshadow-field-in-constructor-modified
++-Wundefined-func-template
++-Wundefined-var-template
++-Wunguarded-availability
++-Wunknown-argument
++-Wunsupported-cb
