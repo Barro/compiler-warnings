@@ -46,6 +46,9 @@ parse_clang_info 3.8 "$target_dir" "$GIT_DIR"/include/clang/Basic/DiagnosticGrou
 git -C "$GIT_DIR" checkout origin/release_39
 parse_clang_info 3.9 "$target_dir" "$GIT_DIR"/include/clang/Basic/DiagnosticGroups.td
 
+git -C "$GIT_DIR" checkout origin/release_40
+parse_clang_info 4.0 "$target_dir" "$GIT_DIR"/include/clang/Basic/DiagnosticGroups.td
+
 versions=(
     3.2
     3.3
@@ -55,6 +58,7 @@ versions=(
     3.7
     3.8
     3.9
+    4.0
 )
 
 seq 2 "${#versions[@]}" | while read -r current_version in ; do

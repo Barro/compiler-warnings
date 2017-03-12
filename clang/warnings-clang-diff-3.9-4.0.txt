@@ -1,0 +1,22 @@
++-Wasm-ignored-qualifier
+--Wbad-array-new-length
++-Wblock-capture-autoreleasing
++-Wdeprecated-dynamic-exception-spec
+--Wdiv-by-zero # DUMMY switch
++-Wdiv-by-zero
+--Weffc++ # DUMMY switch
++-Wdynamic-exception-spec
++-Weffc++
++-Wignored-pragma-intrinsic
++-Wincompatible-exception-spec
++-Wincompatible-function-pointer-types
++-Wmax-unsigned-zero
++-Wnullability-completeness-on-arrays
++-Wnullability-inferred-on-nested-type
++-Wopencl-unsupported-rgba
++-Wprivate-module
++-Wshadow-ivar
++-Wshadow-uncaptured-local
++-Wsigned-enum-bitfield
++-Wspir-compat
++-Wuser-defined-warnings

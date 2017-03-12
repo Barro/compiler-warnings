@@ -17,6 +17,10 @@ static code analysis tools that compilers provide.
 Clang includes `-Weverything` flag, that is not shown in these lists,
 that enables all warnings.
 
+* clang 4.0 [all](clang/warnings-clang-4.0.txt)
+  • [top level](clang/warnings-clang-top-level-4.0.txt)
+  • [unique](clang/warnings-clang-unique-4.0.txt)
+  • [diff](clang/warnings-clang-diff-3.9-4.0.txt)
 * clang 3.9 [all](clang/warnings-clang-3.9.txt)
   • [top level](clang/warnings-clang-top-level-3.9.txt)
   • [unique](clang/warnings-clang-unique-3.9.txt)
