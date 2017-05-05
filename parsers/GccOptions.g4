@@ -18,7 +18,7 @@ argumentList : argument (COMMA SPACE* argument)* ;
 argument : ternary ;
 
 ternary
-   :<assoc=right> ternary SPACE* '?' SPACE* ternary SPACE* ':' SPACE* ternary
+   :<assoc=right> ternary SPACE* '?' SPACE* ternary+ SPACE* ':' SPACE* ternary
    | orTest ;
 
 orTest : andTest (SPACE* OR SPACE* andTest)* ;
