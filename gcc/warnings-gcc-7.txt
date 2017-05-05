@@ -1,0 +1,390 @@
+--all-warnings = -Wall
+--extra-warnings = -Wextra
+--pedantic = -pedantic, -Wpedantic
+-pedantic = -Wpedantic
+-W = -Wextra
+-Wabi
+#    -Wnoexcept-type
+#    -Wpsabi
+-Wabi-tag
+-Wabi=
+-Waddress
+-Waggregate-return
+-Waggressive-loop-optimizations
+-Waligned-new = -Waligned-new=global
+-Waligned-new=
+-Wall
+#    -Waddress
+#    -Waligned-new=
+#    -Warray-bounds
+#    -Warray-bounds=
+#    -Wbool-compare
+#    -Wbool-operation
+#    -Wc++11-compat
+#      -Wnarrowing
+#    -Wc++14-compat
+#    -Wc++1z-compat
+#      -Wnoexcept-type
+#    -Wchar-subscripts
+#    -Wchkp
+#    -Wcomment
+#    -Wdelete-non-virtual-dtor
+#    -Wduplicate-decl-specifier
+#    -Wenum-compare
+#    -Wformat=
+#      -Wformat-contains-nul
+#      -Wformat-extra-args
+#      -Wformat-nonliteral
+#      -Wformat-overflow=
+#      -Wformat-security
+#      -Wformat-truncation=
+#      -Wformat-y2k
+#      -Wformat-zero-length
+#      -Wnonnull
+#    -Wframe-address
+#    -Wimplicit
+#      -Wimplicit-function-declaration
+#      -Wimplicit-int
+#    -Winit-self
+#    -Wint-in-bool-context
+#    -Wlogical-not-parentheses
+#    -Wmain
+#    -Wmaybe-uninitialized
+#    -Wmemset-elt-size
+#    -Wmemset-transposed-args
+#    -Wmisleading-indentation
+#    -Wmissing-braces
+#    -Wnarrowing
+#    -Wnonnull
+#    -Wnonnull-compare
+#    -Wopenmp-simd
+#    -Wparentheses
+#      -Wdangling-else
+#    -Wpointer-sign
+#    -Wreorder
+#    -Wreturn-type
+#    -Wsequence-point
+#    -Wsign-compare
+#    -Wsizeof-pointer-memaccess
+#    -Wstrict-aliasing=
+#    -Wstrict-overflow=
+#    -Wswitch
+#    -Wtautological-compare
+#    -Wtrigraphs
+#    -Wuninitialized
+#      -Wmaybe-uninitialized
+#    -Wunknown-pragmas
+#    -Wunused
+#      -Wunused-but-set-variable
+#      -Wunused-function
+#      -Wunused-label
+#      -Wunused-local-typedefs
+#      -Wunused-value
+#      -Wunused-variable
+#        -Wunused-const-variable=
+#    -Wvolatile-register-var
+-Walloc-size-larger-than=
+-Walloc-zero
+-Walloca
+-Walloca-larger-than=
+-Warray-bounds
+-Warray-bounds=
+-Wassign-intercept
+-Wattributes
+-Wbad-function-cast
+-Wbool-compare
+-Wbool-operation
+-Wbuiltin-declaration-mismatch
+-Wbuiltin-macro-redefined
+-Wc++-compat
+#    -Wenum-compare
+-Wc++0x-compat = -Wc++11-compat
+-Wc++11-compat
+#    -Wnarrowing
+-Wc++14-compat
+-Wc++17-compat = -Wc++1z-compat
+-Wc++1z-compat
+#    -Wnoexcept-type
+-Wc90-c99-compat
+#    -Wlong-long
+-Wc99-c11-compat
+-Wcast-align
+-Wcast-qual
+-Wchar-subscripts
+-Wchkp
+-Wclobbered
+-Wcomment
+-Wcomments = -Wcomment
+-Wconditionally-supported
+-Wconversion
+#    -Wfloat-conversion
+#    -Wsign-conversion
+-Wconversion-null
+-Wcoverage-mismatch
+-Wcpp
+-Wctor-dtor-privacy
+-Wdangling-else
+-Wdate-time
+-Wdeclaration-after-statement
+-Wdelete-incomplete
+-Wdelete-non-virtual-dtor
+-Wdeprecated
+-Wdeprecated-declarations
+-Wdesignated-init
+-Wdisabled-optimization
+-Wdiscarded-array-qualifiers
+-Wdiscarded-qualifiers
+-Wdiv-by-zero
+-Wdouble-promotion
+-Wduplicate-decl-specifier
+-Wduplicated-branches
+-Wduplicated-cond
+-Weffc++
+#    -Wdelete-non-virtual-dtor
+#    -Wnon-virtual-dtor
+-Wempty-body
+-Wendif-labels
+-Wenum-compare
+-Werror-implicit-function-declaration = -Werror=implicit-function-declaration
+-Wexpansion-to-defined
+-Wextra
+#    -Wclobbered
+#    -Wempty-body
+#    -Wignored-qualifiers
+#    -Wimplicit-fallthrough=
+#    -Wmissing-field-initializers
+#    -Wmissing-parameter-type
+#    -Wold-style-declaration
+#    -Woverride-init
+#    -Wsign-compare
+#    -Wsized-deallocation
+#    -Wtype-limits
+#    -Wuninitialized
+#      -Wmaybe-uninitialized
+#    -Wunused-but-set-parameter
+#    -Wunused-parameter
+-Wfloat-conversion
+-Wfloat-equal
+-Wformat = -Wformat=1
+-Wformat-contains-nul
+-Wformat-extra-args
+-Wformat-nonliteral
+-Wformat-overflow = -Wformat-overflow=1
+-Wformat-overflow=
+-Wformat-security
+-Wformat-signedness
+-Wformat-truncation = -Wformat-truncation=1
+-Wformat-truncation=
+-Wformat-y2k
+-Wformat-zero-length
+-Wformat=
+#    -Wformat-contains-nul
+#    -Wformat-extra-args
+#    -Wformat-nonliteral
+#    -Wformat-overflow=
+#    -Wformat-security
+#    -Wformat-truncation=
+#    -Wformat-y2k
+#    -Wformat-zero-length
+#    -Wnonnull
+-Wframe-address
+-Wframe-larger-than=
+-Wfree-nonheap-object
+-Whsa
+-Wignored-attributes
+-Wignored-qualifiers
+-Wimplicit
+#    -Wimplicit-function-declaration
+#    -Wimplicit-int
+-Wimplicit-fallthrough = -Wimplicit-fallthrough=3
+-Wimplicit-fallthrough=
+-Wimplicit-function-declaration
+-Wimplicit-int
+-Wimport # DUMMY switch
+-Wincompatible-pointer-types
+-Winherited-variadic-ctor
+-Winit-self
+-Winline
+-Wint-conversion
+-Wint-in-bool-context
+-Wint-to-pointer-cast
+-Winvalid-memory-model
+-Winvalid-offsetof
+-Winvalid-pch
+-Wjump-misses-init
+-Wlarger-than- = -Wlarger-than=
+-Wlarger-than=
+-Wliteral-suffix
+-Wlogical-not-parentheses
+-Wlogical-op
+-Wlong-long
+-Wlto-type-mismatch
+-Wmain
+-Wmaybe-uninitialized
+-Wmemset-elt-size
+-Wmemset-transposed-args
+-Wmisleading-indentation
+-Wmissing-braces
+-Wmissing-declarations
+-Wmissing-field-initializers
+-Wmissing-format-attribute = -Wsuggest-attribute=format
+-Wmissing-include-dirs
+-Wmissing-noreturn = -Wsuggest-attribute=noreturn
+-Wmissing-parameter-type
+-Wmissing-prototypes
+-Wmudflap # DUMMY switch
+-Wmultichar
+-Wmultiple-inheritance
+-Wnamespaces
+-Wnarrowing
+-Wnested-externs
+-Wnoexcept
+-Wnoexcept-type
+-Wnon-template-friend
+-Wnon-virtual-dtor
+-Wnonnull
+-Wnonnull-compare
+-Wnormalized = -Wnormalized=nfc
+-Wnormalized=
+-Wnull-dereference
+-Wodr
+-Wold-style-cast
+-Wold-style-declaration
+-Wold-style-definition
+-Wopenmp-simd
+-Woverflow
+-Woverlength-strings
+-Woverloaded-virtual
+-Woverride-init
+-Woverride-init-side-effects
+-Wpacked
+-Wpacked-bitfield-compat
+-Wpadded
+-Wparentheses
+#    -Wdangling-else
+-Wpedantic
+#    -Wendif-labels
+#    -Wexpansion-to-defined
+#    -Wmain
+#    -Woverlength-strings
+#    -Wpointer-arith
+#    -Wpointer-sign
+#    -Wvariadic-macros
+-Wplacement-new = -Wplacement-new=1
+-Wplacement-new=
+-Wpmf-conversions
+-Wpointer-arith
+-Wpointer-compare
+-Wpointer-sign
+-Wpointer-to-int-cast
+-Wpragmas
+-Wproperty-assign-default
+-Wprotocol
+-Wpsabi
+-Wredundant-decls
+-Wregister
+-Wreorder
+-Wrestrict
+-Wreturn-local-addr
+-Wreturn-type
+-Wscalar-storage-order
+-Wselector
+-Wsequence-point
+-Wshadow
+#    -Wshadow-ivar
+#    -Wshadow=local
+#      -Wshadow=compatible-local
+-Wshadow-compatible-local = -Wshadow=compatible-local
+-Wshadow-ivar
+-Wshadow-local = -Wshadow=local
+-Wshadow=compatible-local
+-Wshadow=global = -Wshadow
+-Wshadow=local
+#    -Wshadow=compatible-local
+-Wshift-count-negative
+-Wshift-count-overflow
+-Wshift-negative-value
+-Wshift-overflow = -Wshift-overflow=1
+-Wshift-overflow=
+-Wsign-compare
+-Wsign-conversion
+-Wsign-promo
+-Wsized-deallocation
+-Wsizeof-array-argument
+-Wsizeof-pointer-memaccess
+-Wstack-protector
+-Wstack-usage=
+-Wstrict-aliasing
+-Wstrict-aliasing=
+-Wstrict-null-sentinel
+-Wstrict-overflow
+-Wstrict-overflow=
+-Wstrict-prototypes
+-Wstrict-selector-match
+-Wstringop-overflow = -Wstringop-overflow=2
+-Wstringop-overflow=
+-Wsubobject-linkage
+-Wsuggest-attribute=const
+-Wsuggest-attribute=format
+-Wsuggest-attribute=noreturn
+-Wsuggest-attribute=pure
+-Wsuggest-final-methods
+-Wsuggest-final-types
+-Wsuggest-override
+-Wswitch
+-Wswitch-bool
+-Wswitch-default
+-Wswitch-enum
+-Wswitch-unreachable
+-Wsync-nand
+-Wsynth
+-Wsystem-headers
+-Wtautological-compare
+-Wtemplates
+-Wterminate
+-Wtraditional
+#    -Wvariadic-macros
+-Wtraditional-conversion
+-Wtrampolines
+-Wtrigraphs
+-Wtype-limits
+-Wundeclared-selector
+-Wundef
+-Wuninitialized
+#    -Wmaybe-uninitialized
+-Wunknown-pragmas
+-Wunreachable-code # DUMMY switch
+-Wunsafe-loop-optimizations
+-Wunsuffixed-float-constants
+-Wunused
+#    -Wunused-but-set-variable
+#    -Wunused-function
+#    -Wunused-label
+#    -Wunused-local-typedefs
+#    -Wunused-value
+#    -Wunused-variable
+#      -Wunused-const-variable=
+-Wunused-but-set-parameter
+-Wunused-but-set-variable
+-Wunused-const-variable = -Wunused-const-variable=2
+-Wunused-const-variable=
+-Wunused-function
+-Wunused-label
+-Wunused-local-typedefs
+-Wunused-macros
+-Wunused-parameter
+-Wunused-result
+-Wunused-value
+-Wunused-variable
+#    -Wunused-const-variable=
+-Wuseless-cast
+-Wvarargs
+-Wvariadic-macros
+-Wvector-operation-performance
+-Wvirtual-inheritance
+-Wvirtual-move-assign
+-Wvla
+-Wvla-larger-than=
+-Wvolatile-register-var
+-Wwrite-strings
+-Wzero-as-null-pointer-constant

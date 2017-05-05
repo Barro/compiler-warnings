@@ -61,6 +61,10 @@ for a specific version of GCC that you have, you can run GCC with `gcc
 --help=warnings` to get that list. Otherwise some plain GCC warning
 options lists are available below:
 
+* GCC 7 [all](gcc/warnings-gcc-7.txt)
+  • [top level](gcc/warnings-gcc-top-level-7.txt)
+  • [unique](gcc/warnings-gcc-unique-7.txt)
+  • [diff](gcc/warnings-gcc-diff-6-7.txt)
 * GCC 6 [all](gcc/warnings-gcc-6.txt)
   • [top level](gcc/warnings-gcc-top-level-6.txt)
   • [unique](gcc/warnings-gcc-unique-6.txt)
