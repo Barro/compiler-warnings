@@ -7,7 +7,7 @@ options
 
 optionAttributes : optionAttribute (SPACE optionAttribute)* SPACE? EOF ;
 
-optionAttribute : variableName trailer? ;
+optionAttribute : variableName SPACE* trailer? ;
 
 variableName : NAME_LITERAL ;
 
