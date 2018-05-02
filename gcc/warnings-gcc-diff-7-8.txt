@@ -1,0 +1,15 @@
++-Wattribute-alias
++-Wcast-align=strict
++-Wcast-function-type
++-Wcatch-value
++-Wcatch-value=
++-Wclass-memaccess
++-Wextra-semi
++-Wif-not-aligned
++-Wmissing-attributes
++-Wmultistatement-macros
++-Wpacked-not-aligned
++-Wsizeof-pointer-div
++-Wstringop-truncation
++-Wsuggest-attribute=cold
++-Wsuggest-attribute=malloc
