@@ -69,6 +69,7 @@
 #    -Wstrict-aliasing=
 #    -Wstrict-overflow=
 #    -Wstringop-overflow=
+#    -Wstringop-truncation
 #    -Wswitch
 #    -Wtautological-compare
 #    -Wtrigraphs
@@ -222,7 +223,6 @@
 -Wstrict-overflow
 -Wstrict-prototypes
 -Wstrict-selector-match
--Wstringop-truncation
 -Wsubobject-linkage
 -Wsuggest-attribute=cold
 -Wsuggest-attribute=const

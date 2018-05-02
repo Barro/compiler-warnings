@@ -77,6 +77,7 @@
 #    -Wstrict-aliasing=
 #    -Wstrict-overflow=
 #    -Wstringop-overflow=
+#    -Wstringop-truncation
 #    -Wswitch
 #    -Wtautological-compare
 #    -Wtrigraphs
