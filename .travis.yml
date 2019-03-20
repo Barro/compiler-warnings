@@ -1,11 +1,13 @@
 sudo: required
-before_install:
+0;256;0cbefore_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq ninja-build
 
 language: python
 python:
+  - "3.5"
   - "3.6"
+  - "3.7"
 install:
   - "wget -O antlr.jar http://www.antlr.org/download/antlr-4.7.2-complete.jar"
   - "echo -e '#!/bin/sh\nexec java -jar \"$(dirname \"$0\")\"/antlr.jar \"$@\"' > antlr4"
