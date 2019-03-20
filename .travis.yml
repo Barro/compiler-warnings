@@ -5,7 +5,7 @@ before_install:
 
 language: python
 python:
-  - "2.7"
+  - "3.6"
 install:
   - "wget -O antlr.jar http://www.antlr.org/download/antlr-4.7.2-complete.jar"
   - "echo -e '#!/bin/sh\nexec java -jar \"$(dirname \"$0\")\"/antlr.jar \"$@\"' > antlr4"
