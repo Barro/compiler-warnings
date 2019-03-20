@@ -95,7 +95,7 @@ class VariableAssignmentListener(GccOptionsListener.GccOptionsListener):
     >>> listener = VariableAssignmentListener()
     >>> apply_listener("Var(varname)", listener)
     >>> listener.variable_name
-    u'varname'
+    'varname'
     """
 
     def __init__(self):
@@ -118,11 +118,11 @@ class AliasAssignmentListener(GccOptionsListener.GccOptionsListener):
     >>> listener = AliasAssignmentListener()
     >>> apply_listener("Alias(Wall)", listener)
     >>> listener.alias_name
-    u'Wall'
+    'Wall'
     >>> listener = AliasAssignmentListener()
     >>> apply_listener("Alias(Wformat=,1,0)", listener)
     >>> listener.alias_name
-    u'Wformat=1'
+    'Wformat=1'
     """
 
     def __init__(self):
@@ -157,17 +157,17 @@ class LanguagesEnabledListener(GccOptionsListener.GccOptionsListener):
     >>> listener = LanguagesEnabledListener()
     >>> apply_listener("LangEnabledBy(C C++,Wall,0,1)", listener)
     >>> listener.flags
-    [u'Wall']
+    ['Wall']
 
     >>> listener = LanguagesEnabledListener()
     >>> apply_listener("LangEnabledBy(C C++,Wall99,0,1)", listener)
     >>> listener.flags
-    [u'Wall99']
+    ['Wall99']
 
     >>> listener = LanguagesEnabledListener()
     >>> apply_listener("LangEnabledBy(C C++,Wall || Wc++-compat)", listener)
     >>> listener.flags
-    [u'Wall', u'Wc++-compat']
+    ['Wall', 'Wc++-compat']
     """
 
     def __init__(self):
@@ -199,7 +199,7 @@ class EnabledByListener(GccOptionsListener.GccOptionsListener):
     >>> listener = EnabledByListener()
     >>> apply_listener("EnabledBy(Wextra)", listener)
     >>> listener.enabled_by
-    u'Wextra'
+    'Wextra'
     """
 
     def __init__(self):

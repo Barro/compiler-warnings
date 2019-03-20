@@ -2,7 +2,7 @@ rule antlr
      command = antlr4 $in
 
 rule doctest
-     command = python -mdoctest $in
+     command = python3 -mdoctest $in
 
 build GccOptionsLexer.py GccOptionsLexer.tokens GccOptionsListener.py GccOptionsParser.py GccOptions.tokens: antlr GccOptions.g4 | requirements.txt
 
