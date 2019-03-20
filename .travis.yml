@@ -1,5 +1,6 @@
+dist: xenial
 sudo: required
-0;256;0cbefore_install:
+before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq ninja-build
 
