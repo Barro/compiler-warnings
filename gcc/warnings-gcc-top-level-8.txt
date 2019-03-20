@@ -249,7 +249,7 @@
 -Wundeclared-selector
 -Wundef
 -Wunreachable-code # DUMMY switch
--Wunsafe-loop-optimizations
+-Wunsafe-loop-optimizations # DUMMY switch
 -Wunsuffixed-float-constants
 -Wunused-macros
 -Wunused-result

@@ -380,7 +380,7 @@
 #    -Wmaybe-uninitialized
 -Wunknown-pragmas
 -Wunreachable-code # DUMMY switch
--Wunsafe-loop-optimizations
+-Wunsafe-loop-optimizations # DUMMY switch
 -Wunsuffixed-float-constants
 -Wunused
 #    -Wunused-but-set-variable

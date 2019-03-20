@@ -2,7 +2,7 @@ grammar GccOptions;
 
 options
 {
-    language = Python2;
+    language = Python3;
 }
 
 optionAttributes : optionAttribute (SPACE optionAttribute)* SPACE? EOF ;
