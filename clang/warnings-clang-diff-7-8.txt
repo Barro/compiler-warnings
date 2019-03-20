@@ -1,0 +1,13 @@
+--Wat-protocol
++-Wat-protocol # DUMMY switch
++-Wcall-to-pure-virtual-from-ctor-dtor
++-Wctu
++-Wdelete-abstract-non-virtual-dtor
++-Wdelete-non-abstract-non-virtual-dtor
++-Wempty-init-stmt
++-Wextra-semi-stmt
++-Wimplicit-float-conversion
++-Wimplicit-int-conversion
++-Wnoderef
++-Wobjc-property-assign-on-object-type
++-Woverride-init

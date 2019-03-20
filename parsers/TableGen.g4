@@ -2,7 +2,7 @@ grammar TableGen;
 
 options
 {
-    language = Python2;
+    language = Python3;
 }
 
 expression : (ws | statementExpression)* EOF ;

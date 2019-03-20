@@ -4,9 +4,9 @@ rule antlr
 rule doctest
      command = python -mdoctest $in
 
-build GccOptionsLexer.py GccOptionsLexer.tokens GccOptionsListener.py GccOptionsParser.py GccOptions.tokens: antlr GccOptions.g4
+build GccOptionsLexer.py GccOptionsLexer.tokens GccOptionsListener.py GccOptionsParser.py GccOptions.tokens: antlr GccOptions.g4 | requirements.txt
 
-build TableGenLexer.py TableGenLexer.tokens TableGenListener.py TableGenParser.py TableGen.tokens: antlr TableGen.g4
+build TableGenLexer.py TableGenLexer.tokens TableGenListener.py TableGenParser.py TableGen.tokens: antlr TableGen.g4 | requirements.txt
 
 build all: phony GccOptionsLexer.py GccOptionsLexer.tokens GccOptionsListener.py GccOptionsParser.py GccOptions.tokens TableGenLexer.py TableGenLexer.tokens TableGenListener.py TableGenParser.py TableGen.tokens
 
